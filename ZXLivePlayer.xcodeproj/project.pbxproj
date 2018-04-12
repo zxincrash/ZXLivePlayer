@@ -1,0 +1,1074 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CEE063E81ECF53A470BB1D70 /* libPods-ZXLivePlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F45DDD9A5932CDCA95AB127 /* libPods-ZXLivePlayer.a */; };
+		DC36659220688594007C0B69 /* ZXListBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC36659120688594007C0B69 /* ZXListBaseViewController.m */; };
+		DC452FF8206CD6DA00A83680 /* ZXPushPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC452FF7206CD6DA00A83680 /* ZXPushPlayerView.m */; };
+		DC452FFC206CD76B00A83680 /* ZXPushControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC452FFB206CD76B00A83680 /* ZXPushControlView.m */; };
+		DC453001206CF01E00A83680 /* ZXPublishListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC453000206CF01E00A83680 /* ZXPublishListViewController.m */; };
+		DC453004206CF09300A83680 /* ZXPublishDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC453003206CF09300A83680 /* ZXPublishDetailViewController.m */; };
+		DC747E81206E0A0700C3BA3D /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC747E80206E0A0600C3BA3D /* VideoToolbox.framework */; };
+		DC747E83206E0A1800C3BA3D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC747E82206E0A1800C3BA3D /* AVFoundation.framework */; };
+		DC747E85206E0A2300C3BA3D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC747E84206E0A2300C3BA3D /* MediaPlayer.framework */; };
+		DC747E87206E0A3900C3BA3D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC747E86206E0A3900C3BA3D /* CoreMedia.framework */; };
+		DC747E89206E0A4F00C3BA3D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC747E88206E0A4F00C3BA3D /* Security.framework */; };
+		DC747E8B206E0A6D00C3BA3D /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC747E8A206E0A6C00C3BA3D /* Metal.framework */; };
+		DC863CAA2064D0CA00170E27 /* ZXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863CA92064D0CA00170E27 /* ZXAppDelegate.m */; };
+		DC863CB22064D0CA00170E27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC863CB12064D0CA00170E27 /* Assets.xcassets */; };
+		DC863CB82064D0CA00170E27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863CB72064D0CA00170E27 /* main.m */; };
+		DC863CC22064D0CB00170E27 /* ZXLivePlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863CC12064D0CB00170E27 /* ZXLivePlayerTests.m */; };
+		DC863CCD2064D0CB00170E27 /* ZXLivePlayerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863CCC2064D0CB00170E27 /* ZXLivePlayerUITests.m */; };
+		DC863CE62064D1E600170E27 /* ZXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863CE12064D1E600170E27 /* ZXBaseViewController.m */; };
+		DC863CE72064D1E600170E27 /* ZXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863CE32064D1E600170E27 /* ZXNavigationController.m */; };
+		DC863CE82064D1E600170E27 /* ZXTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863CE52064D1E600170E27 /* ZXTabBarController.m */; };
+		DC863CED2064D33100170E27 /* UIScrollView+Gesture.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863CEC2064D33100170E27 /* UIScrollView+Gesture.m */; };
+		DC863D142064D48B00170E27 /* ASValuePopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863CF12064D48B00170E27 /* ASValuePopUpView.m */; };
+		DC863D152064D48B00170E27 /* ASValueTrackingSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863CF32064D48B00170E27 /* ASValueTrackingSlider.m */; };
+		DC863D162064D48B00170E27 /* DQChangeAngleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863CF62064D48B00170E27 /* DQChangeAngleModel.m */; };
+		DC863D172064D48B00170E27 /* DQChangeAngleView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863CF82064D48B00170E27 /* DQChangeAngleView.m */; };
+		DC863D182064D48B00170E27 /* ZXBrightnessView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863CFA2064D48B00170E27 /* ZXBrightnessView.m */; };
+		DC863D192064D48B00170E27 /* ZXMediaPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863CFD2064D48B00170E27 /* ZXMediaPlayerControlView.m */; };
+		DC863D1A2064D48B00170E27 /* ZXMediaPlayerLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863CFF2064D48B00170E27 /* ZXMediaPlayerLoadingView.m */; };
+		DC863D1B2064D48B00170E27 /* UIAlertController+MediaPlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863D022064D48B00170E27 /* UIAlertController+MediaPlayerRotation.m */; };
+		DC863D1C2064D48B00170E27 /* UINavigationController+MediaPlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863D042064D48B00170E27 /* UINavigationController+MediaPlayerRotation.m */; };
+		DC863D1D2064D48B00170E27 /* UIViewController+MediaPlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863D062064D48B00170E27 /* UIViewController+MediaPlayerRotation.m */; };
+		DC863D1E2064D48B00170E27 /* UIWindow+CurrentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863D082064D48B00170E27 /* UIWindow+CurrentViewController.m */; };
+		DC863D1F2064D48B00170E27 /* MMMaterialDesignSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863D0A2064D48B00170E27 /* MMMaterialDesignSpinner.m */; };
+		DC863D202064D48B00170E27 /* UINavigationController+FullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863D0C2064D48B00170E27 /* UINavigationController+FullscreenPopGesture.m */; };
+		DC863D212064D48B00170E27 /* ZXMediaPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DC863D0E2064D48B00170E27 /* ZXMediaPlayer.bundle */; };
+		DC863D222064D48B00170E27 /* ZXMediaPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863D102064D48B00170E27 /* ZXMediaPlayerView.m */; };
+		DC863D232064D48B00170E27 /* ZXMediaPlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863D132064D48B00170E27 /* ZXMediaPlayerModel.m */; };
+		DC863D2D2064D59400170E27 /* ZXLiveListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863D2C2064D59400170E27 /* ZXLiveListViewController.m */; };
+		DC863D302064D5A900170E27 /* ZXVodListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863D2F2064D5A900170E27 /* ZXVodListViewController.m */; };
+		DC863D382064D66000170E27 /* UIBarButtonItem+item.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863D362064D66000170E27 /* UIBarButtonItem+item.m */; };
+		DC863D3B2064D85B00170E27 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863D392064D85A00170E27 /* NSString+Category.m */; };
+		DC863D402064D8CC00170E27 /* NSMutableDictionary+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863D3E2064D8CC00170E27 /* NSMutableDictionary+Safe.m */; };
+		DC863D412064D8CC00170E27 /* NSMutableArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863D3F2064D8CC00170E27 /* NSMutableArray+Safe.m */; };
+		DC863D472064DA8F00170E27 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DC863D462064DA8F00170E27 /* libstdc++.tbd */; };
+		DC863D492064DAA800170E27 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DC863D482064DAA800170E27 /* libz.tbd */; };
+		DC863D4B2064DAB000170E27 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DC863D4A2064DAB000170E27 /* libresolv.tbd */; };
+		DC863D4D2064DAC100170E27 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DC863D4C2064DAC100170E27 /* libiconv.tbd */; };
+		DC863D522064E03B00170E27 /* ZXDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863D512064E03B00170E27 /* ZXDetailViewController.m */; };
+		DC863D552064EB7A00170E27 /* ZXDetailCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863D542064EB7A00170E27 /* ZXDetailCoverView.m */; };
+		DC863D582064EBA200170E27 /* ZXDetailCoverModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863D572064EBA200170E27 /* ZXDetailCoverModel.m */; };
+		DC863D5C2064F3B600170E27 /* ZXNetWorkMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863D5B2064F3B600170E27 /* ZXNetWorkMonitor.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC863CBE2064D0CB00170E27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC863C9D2064D0CA00170E27 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC863CA42064D0CA00170E27;
+			remoteInfo = ZXLivePlayer;
+		};
+		DC863CC92064D0CB00170E27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC863C9D2064D0CA00170E27 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC863CA42064D0CA00170E27;
+			remoteInfo = ZXLivePlayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		16AA995E71928A3D19E49EE4 /* Pods-ZXLivePlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZXLivePlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZXLivePlayer/Pods-ZXLivePlayer.release.xcconfig"; sourceTree = "<group>"; };
+		5F45DDD9A5932CDCA95AB127 /* libPods-ZXLivePlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZXLivePlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		676C0CA43DE884353E751AA6 /* Pods-ZXLivePlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZXLivePlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZXLivePlayer/Pods-ZXLivePlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		DC36659020688594007C0B69 /* ZXListBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXListBaseViewController.h; sourceTree = "<group>"; };
+		DC36659120688594007C0B69 /* ZXListBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXListBaseViewController.m; sourceTree = "<group>"; };
+		DC452FF6206CD6DA00A83680 /* ZXPushPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXPushPlayerView.h; sourceTree = "<group>"; };
+		DC452FF7206CD6DA00A83680 /* ZXPushPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXPushPlayerView.m; sourceTree = "<group>"; };
+		DC452FFA206CD76B00A83680 /* ZXPushControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXPushControlView.h; sourceTree = "<group>"; };
+		DC452FFB206CD76B00A83680 /* ZXPushControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXPushControlView.m; sourceTree = "<group>"; };
+		DC452FFF206CF01E00A83680 /* ZXPublishListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXPublishListViewController.h; sourceTree = "<group>"; };
+		DC453000206CF01E00A83680 /* ZXPublishListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXPublishListViewController.m; sourceTree = "<group>"; };
+		DC453002206CF09300A83680 /* ZXPublishDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXPublishDetailViewController.h; sourceTree = "<group>"; };
+		DC453003206CF09300A83680 /* ZXPublishDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXPublishDetailViewController.m; sourceTree = "<group>"; };
+		DC747E80206E0A0600C3BA3D /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		DC747E82206E0A1800C3BA3D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DC747E84206E0A2300C3BA3D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		DC747E86206E0A3900C3BA3D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		DC747E88206E0A4F00C3BA3D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DC747E8A206E0A6C00C3BA3D /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		DC863CA52064D0CA00170E27 /* ZXLivePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZXLivePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC863CA82064D0CA00170E27 /* ZXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXAppDelegate.h; sourceTree = "<group>"; };
+		DC863CA92064D0CA00170E27 /* ZXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXAppDelegate.m; sourceTree = "<group>"; };
+		DC863CB12064D0CA00170E27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC863CB62064D0CA00170E27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC863CB72064D0CA00170E27 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DC863CBD2064D0CB00170E27 /* ZXLivePlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZXLivePlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC863CC12064D0CB00170E27 /* ZXLivePlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXLivePlayerTests.m; sourceTree = "<group>"; };
+		DC863CC32064D0CB00170E27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC863CC82064D0CB00170E27 /* ZXLivePlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZXLivePlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC863CCC2064D0CB00170E27 /* ZXLivePlayerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXLivePlayerUITests.m; sourceTree = "<group>"; };
+		DC863CCE2064D0CB00170E27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC863CE02064D1E600170E27 /* ZXBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXBaseViewController.h; sourceTree = "<group>"; };
+		DC863CE12064D1E600170E27 /* ZXBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXBaseViewController.m; sourceTree = "<group>"; };
+		DC863CE22064D1E600170E27 /* ZXNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXNavigationController.h; sourceTree = "<group>"; };
+		DC863CE32064D1E600170E27 /* ZXNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXNavigationController.m; sourceTree = "<group>"; };
+		DC863CE42064D1E600170E27 /* ZXTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXTabBarController.h; sourceTree = "<group>"; };
+		DC863CE52064D1E600170E27 /* ZXTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXTabBarController.m; sourceTree = "<group>"; };
+		DC863CEA2064D33100170E27 /* ZXCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXCommon.h; sourceTree = "<group>"; };
+		DC863CEB2064D33100170E27 /* UIScrollView+Gesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Gesture.h"; sourceTree = "<group>"; };
+		DC863CEC2064D33100170E27 /* UIScrollView+Gesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Gesture.m"; sourceTree = "<group>"; };
+		DC863CF02064D48B00170E27 /* ASValuePopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValuePopUpView.h; sourceTree = "<group>"; };
+		DC863CF12064D48B00170E27 /* ASValuePopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValuePopUpView.m; sourceTree = "<group>"; };
+		DC863CF22064D48B00170E27 /* ASValueTrackingSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValueTrackingSlider.h; sourceTree = "<group>"; };
+		DC863CF32064D48B00170E27 /* ASValueTrackingSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValueTrackingSlider.m; sourceTree = "<group>"; };
+		DC863CF52064D48B00170E27 /* DQChangeAngleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQChangeAngleModel.h; sourceTree = "<group>"; };
+		DC863CF62064D48B00170E27 /* DQChangeAngleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQChangeAngleModel.m; sourceTree = "<group>"; };
+		DC863CF72064D48B00170E27 /* DQChangeAngleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQChangeAngleView.h; sourceTree = "<group>"; };
+		DC863CF82064D48B00170E27 /* DQChangeAngleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQChangeAngleView.m; sourceTree = "<group>"; };
+		DC863CF92064D48B00170E27 /* ZXBrightnessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXBrightnessView.h; sourceTree = "<group>"; };
+		DC863CFA2064D48B00170E27 /* ZXBrightnessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXBrightnessView.m; sourceTree = "<group>"; };
+		DC863CFB2064D48B00170E27 /* ZXMediaPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXMediaPlayer.h; sourceTree = "<group>"; };
+		DC863CFC2064D48B00170E27 /* ZXMediaPlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXMediaPlayerControlView.h; sourceTree = "<group>"; };
+		DC863CFD2064D48B00170E27 /* ZXMediaPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXMediaPlayerControlView.m; sourceTree = "<group>"; };
+		DC863CFE2064D48B00170E27 /* ZXMediaPlayerLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXMediaPlayerLoadingView.h; sourceTree = "<group>"; };
+		DC863CFF2064D48B00170E27 /* ZXMediaPlayerLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXMediaPlayerLoadingView.m; sourceTree = "<group>"; };
+		DC863D012064D48B00170E27 /* UIAlertController+MediaPlayerRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+MediaPlayerRotation.h"; sourceTree = "<group>"; };
+		DC863D022064D48B00170E27 /* UIAlertController+MediaPlayerRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+MediaPlayerRotation.m"; sourceTree = "<group>"; };
+		DC863D032064D48B00170E27 /* UINavigationController+MediaPlayerRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+MediaPlayerRotation.h"; sourceTree = "<group>"; };
+		DC863D042064D48B00170E27 /* UINavigationController+MediaPlayerRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+MediaPlayerRotation.m"; sourceTree = "<group>"; };
+		DC863D052064D48B00170E27 /* UIViewController+MediaPlayerRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MediaPlayerRotation.h"; sourceTree = "<group>"; };
+		DC863D062064D48B00170E27 /* UIViewController+MediaPlayerRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MediaPlayerRotation.m"; sourceTree = "<group>"; };
+		DC863D072064D48B00170E27 /* UIWindow+CurrentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+CurrentViewController.h"; sourceTree = "<group>"; };
+		DC863D082064D48B00170E27 /* UIWindow+CurrentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+CurrentViewController.m"; sourceTree = "<group>"; };
+		DC863D092064D48B00170E27 /* MMMaterialDesignSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMaterialDesignSpinner.h; sourceTree = "<group>"; };
+		DC863D0A2064D48B00170E27 /* MMMaterialDesignSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMaterialDesignSpinner.m; sourceTree = "<group>"; };
+		DC863D0B2064D48B00170E27 /* UINavigationController+FullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FullscreenPopGesture.h"; sourceTree = "<group>"; };
+		DC863D0C2064D48B00170E27 /* UINavigationController+FullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FullscreenPopGesture.m"; sourceTree = "<group>"; };
+		DC863D0D2064D48B00170E27 /* ZXMediaPlayerControlViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXMediaPlayerControlViewDelegate.h; sourceTree = "<group>"; };
+		DC863D0E2064D48B00170E27 /* ZXMediaPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZXMediaPlayer.bundle; sourceTree = "<group>"; };
+		DC863D0F2064D48B00170E27 /* ZXMediaPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXMediaPlayerView.h; sourceTree = "<group>"; };
+		DC863D102064D48B00170E27 /* ZXMediaPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXMediaPlayerView.m; sourceTree = "<group>"; };
+		DC863D122064D48B00170E27 /* ZXMediaPlayerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXMediaPlayerModel.h; sourceTree = "<group>"; };
+		DC863D132064D48B00170E27 /* ZXMediaPlayerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXMediaPlayerModel.m; sourceTree = "<group>"; };
+		DC863D2B2064D59400170E27 /* ZXLiveListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXLiveListViewController.h; sourceTree = "<group>"; };
+		DC863D2C2064D59400170E27 /* ZXLiveListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXLiveListViewController.m; sourceTree = "<group>"; };
+		DC863D2E2064D5A900170E27 /* ZXVodListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXVodListViewController.h; sourceTree = "<group>"; };
+		DC863D2F2064D5A900170E27 /* ZXVodListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXVodListViewController.m; sourceTree = "<group>"; };
+		DC863D352064D66000170E27 /* UIBarButtonItem+item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+item.h"; sourceTree = "<group>"; };
+		DC863D362064D66000170E27 /* UIBarButtonItem+item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+item.m"; sourceTree = "<group>"; };
+		DC863D392064D85A00170E27 /* NSString+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
+		DC863D3A2064D85B00170E27 /* NSString+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
+		DC863D3C2064D8CB00170E27 /* NSMutableDictionary+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+Safe.h"; sourceTree = "<group>"; };
+		DC863D3D2064D8CB00170E27 /* NSMutableArray+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Safe.h"; sourceTree = "<group>"; };
+		DC863D3E2064D8CC00170E27 /* NSMutableDictionary+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+Safe.m"; sourceTree = "<group>"; };
+		DC863D3F2064D8CC00170E27 /* NSMutableArray+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Safe.m"; sourceTree = "<group>"; };
+		DC863D462064DA8F00170E27 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		DC863D482064DAA800170E27 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		DC863D4A2064DAB000170E27 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		DC863D4C2064DAC100170E27 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		DC863D502064E03B00170E27 /* ZXDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXDetailViewController.h; sourceTree = "<group>"; };
+		DC863D512064E03B00170E27 /* ZXDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXDetailViewController.m; sourceTree = "<group>"; };
+		DC863D532064EB7A00170E27 /* ZXDetailCoverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXDetailCoverView.h; sourceTree = "<group>"; };
+		DC863D542064EB7A00170E27 /* ZXDetailCoverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXDetailCoverView.m; sourceTree = "<group>"; };
+		DC863D562064EBA200170E27 /* ZXDetailCoverModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXDetailCoverModel.h; sourceTree = "<group>"; };
+		DC863D572064EBA200170E27 /* ZXDetailCoverModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXDetailCoverModel.m; sourceTree = "<group>"; };
+		DC863D5A2064F3B600170E27 /* ZXNetWorkMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXNetWorkMonitor.h; sourceTree = "<group>"; };
+		DC863D5B2064F3B600170E27 /* ZXNetWorkMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXNetWorkMonitor.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC863CA22064D0CA00170E27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC747E8B206E0A6D00C3BA3D /* Metal.framework in Frameworks */,
+				DC747E89206E0A4F00C3BA3D /* Security.framework in Frameworks */,
+				DC747E87206E0A3900C3BA3D /* CoreMedia.framework in Frameworks */,
+				DC747E85206E0A2300C3BA3D /* MediaPlayer.framework in Frameworks */,
+				DC747E83206E0A1800C3BA3D /* AVFoundation.framework in Frameworks */,
+				DC747E81206E0A0700C3BA3D /* VideoToolbox.framework in Frameworks */,
+				DC863D4D2064DAC100170E27 /* libiconv.tbd in Frameworks */,
+				DC863D4B2064DAB000170E27 /* libresolv.tbd in Frameworks */,
+				DC863D492064DAA800170E27 /* libz.tbd in Frameworks */,
+				DC863D472064DA8F00170E27 /* libstdc++.tbd in Frameworks */,
+				CEE063E81ECF53A470BB1D70 /* libPods-ZXLivePlayer.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC863CBA2064D0CB00170E27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC863CC52064D0CB00170E27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		37C97E1D64BEEF5ED9B72233 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				676C0CA43DE884353E751AA6 /* Pods-ZXLivePlayer.debug.xcconfig */,
+				16AA995E71928A3D19E49EE4 /* Pods-ZXLivePlayer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		51A7302FEE779056B9F0E8BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC747E8A206E0A6C00C3BA3D /* Metal.framework */,
+				DC747E88206E0A4F00C3BA3D /* Security.framework */,
+				DC747E86206E0A3900C3BA3D /* CoreMedia.framework */,
+				DC747E84206E0A2300C3BA3D /* MediaPlayer.framework */,
+				DC747E82206E0A1800C3BA3D /* AVFoundation.framework */,
+				DC747E80206E0A0600C3BA3D /* VideoToolbox.framework */,
+				DC863D4C2064DAC100170E27 /* libiconv.tbd */,
+				DC863D4A2064DAB000170E27 /* libresolv.tbd */,
+				DC863D482064DAA800170E27 /* libz.tbd */,
+				DC863D462064DA8F00170E27 /* libstdc++.tbd */,
+				5F45DDD9A5932CDCA95AB127 /* libPods-ZXLivePlayer.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC36658F20688573007C0B69 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				DC36659020688594007C0B69 /* ZXListBaseViewController.h */,
+				DC36659120688594007C0B69 /* ZXListBaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		DC452FF5206CD6BE00A83680 /* ZXPushPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				DC452FF6206CD6DA00A83680 /* ZXPushPlayerView.h */,
+				DC452FF7206CD6DA00A83680 /* ZXPushPlayerView.m */,
+				DC452FF9206CD75500A83680 /* ControlView */,
+			);
+			path = ZXPushPlayer;
+			sourceTree = "<group>";
+		};
+		DC452FF9206CD75500A83680 /* ControlView */ = {
+			isa = PBXGroup;
+			children = (
+				DC452FFA206CD76B00A83680 /* ZXPushControlView.h */,
+				DC452FFB206CD76B00A83680 /* ZXPushControlView.m */,
+			);
+			path = ControlView;
+			sourceTree = "<group>";
+		};
+		DC452FFD206CD7AE00A83680 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				DC452FFE206CD7CF00A83680 /* Public */,
+				DC452FF5206CD6BE00A83680 /* ZXPushPlayer */,
+				DC863CEE2064D48B00170E27 /* ZXLivePlayer */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		DC452FFE206CD7CF00A83680 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				DC863CFB2064D48B00170E27 /* ZXMediaPlayer.h */,
+				DC863D002064D48B00170E27 /* Extension */,
+				DC863D092064D48B00170E27 /* MMMaterialDesignSpinner.h */,
+				DC863D0A2064D48B00170E27 /* MMMaterialDesignSpinner.m */,
+				DC863CF92064D48B00170E27 /* ZXBrightnessView.h */,
+				DC863CFA2064D48B00170E27 /* ZXBrightnessView.m */,
+				DC863CFE2064D48B00170E27 /* ZXMediaPlayerLoadingView.h */,
+				DC863CFF2064D48B00170E27 /* ZXMediaPlayerLoadingView.m */,
+				DC863D0B2064D48B00170E27 /* UINavigationController+FullscreenPopGesture.h */,
+				DC863D0C2064D48B00170E27 /* UINavigationController+FullscreenPopGesture.m */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		DC863C9C2064D0CA00170E27 = {
+			isa = PBXGroup;
+			children = (
+				DC863CA72064D0CA00170E27 /* ZXLivePlayer */,
+				DC863CC02064D0CB00170E27 /* ZXLivePlayerTests */,
+				DC863CCB2064D0CB00170E27 /* ZXLivePlayerUITests */,
+				DC863CA62064D0CA00170E27 /* Products */,
+				37C97E1D64BEEF5ED9B72233 /* Pods */,
+				51A7302FEE779056B9F0E8BA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DC863CA62064D0CA00170E27 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC863CA52064D0CA00170E27 /* ZXLivePlayer.app */,
+				DC863CBD2064D0CB00170E27 /* ZXLivePlayerTests.xctest */,
+				DC863CC82064D0CB00170E27 /* ZXLivePlayerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC863CA72064D0CA00170E27 /* ZXLivePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				DC863CDA2064D12400170E27 /* ZXAppDelegate */,
+				DC863CDE2064D1E600170E27 /* Main */,
+				DC863CDD2064D1E600170E27 /* Tool */,
+				DC863CE92064D33100170E27 /* Common */,
+				DC863CDB2064D12400170E27 /* Supporting Files */,
+			);
+			path = ZXLivePlayer;
+			sourceTree = "<group>";
+		};
+		DC863CC02064D0CB00170E27 /* ZXLivePlayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC863CC12064D0CB00170E27 /* ZXLivePlayerTests.m */,
+				DC863CC32064D0CB00170E27 /* Info.plist */,
+			);
+			path = ZXLivePlayerTests;
+			sourceTree = "<group>";
+		};
+		DC863CCB2064D0CB00170E27 /* ZXLivePlayerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DC863CCC2064D0CB00170E27 /* ZXLivePlayerUITests.m */,
+				DC863CCE2064D0CB00170E27 /* Info.plist */,
+			);
+			path = ZXLivePlayerUITests;
+			sourceTree = "<group>";
+		};
+		DC863CDA2064D12400170E27 /* ZXAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				DC863CA82064D0CA00170E27 /* ZXAppDelegate.h */,
+				DC863CA92064D0CA00170E27 /* ZXAppDelegate.m */,
+			);
+			path = ZXAppDelegate;
+			sourceTree = "<group>";
+		};
+		DC863CDB2064D12400170E27 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC863CB12064D0CA00170E27 /* Assets.xcassets */,
+				DC863CB62064D0CA00170E27 /* Info.plist */,
+				DC863CB72064D0CA00170E27 /* main.m */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC863CDD2064D1E600170E27 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				DC863D592064F39500170E27 /* NetWork */,
+				DC863D342064D66000170E27 /* UIBarButtonItem+item */,
+				DC452FFD206CD7AE00A83680 /* Player */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		DC863CDE2064D1E600170E27 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DC863CDF2064D1E600170E27 /* Base */,
+				DC863D4F2064E02100170E27 /* List */,
+				DC863D4E2064E01100170E27 /* Detail */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DC863CDF2064D1E600170E27 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				DC863CE02064D1E600170E27 /* ZXBaseViewController.h */,
+				DC863CE12064D1E600170E27 /* ZXBaseViewController.m */,
+				DC863CE22064D1E600170E27 /* ZXNavigationController.h */,
+				DC863CE32064D1E600170E27 /* ZXNavigationController.m */,
+				DC863CE42064D1E600170E27 /* ZXTabBarController.h */,
+				DC863CE52064D1E600170E27 /* ZXTabBarController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		DC863CE92064D33100170E27 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DC863CEA2064D33100170E27 /* ZXCommon.h */,
+				DC863D432064D9DA00170E27 /* ThirdFrameworks */,
+				DC863D422064D8E800170E27 /* Extension */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DC863CEE2064D48B00170E27 /* ZXLivePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				DC863D0F2064D48B00170E27 /* ZXMediaPlayerView.h */,
+				DC863D102064D48B00170E27 /* ZXMediaPlayerView.m */,
+				DC863CEF2064D48B00170E27 /* ControlView */,
+				DC863D0E2064D48B00170E27 /* ZXMediaPlayer.bundle */,
+				DC863D112064D48B00170E27 /* Model */,
+			);
+			path = ZXLivePlayer;
+			sourceTree = "<group>";
+		};
+		DC863CEF2064D48B00170E27 /* ControlView */ = {
+			isa = PBXGroup;
+			children = (
+				DC863CF02064D48B00170E27 /* ASValuePopUpView.h */,
+				DC863CF12064D48B00170E27 /* ASValuePopUpView.m */,
+				DC863CF22064D48B00170E27 /* ASValueTrackingSlider.h */,
+				DC863CF32064D48B00170E27 /* ASValueTrackingSlider.m */,
+				DC863CF42064D48B00170E27 /* ChangeAngle */,
+				DC863CFC2064D48B00170E27 /* ZXMediaPlayerControlView.h */,
+				DC863CFD2064D48B00170E27 /* ZXMediaPlayerControlView.m */,
+				DC863D0D2064D48B00170E27 /* ZXMediaPlayerControlViewDelegate.h */,
+			);
+			path = ControlView;
+			sourceTree = "<group>";
+		};
+		DC863CF42064D48B00170E27 /* ChangeAngle */ = {
+			isa = PBXGroup;
+			children = (
+				DC863CF52064D48B00170E27 /* DQChangeAngleModel.h */,
+				DC863CF62064D48B00170E27 /* DQChangeAngleModel.m */,
+				DC863CF72064D48B00170E27 /* DQChangeAngleView.h */,
+				DC863CF82064D48B00170E27 /* DQChangeAngleView.m */,
+			);
+			path = ChangeAngle;
+			sourceTree = "<group>";
+		};
+		DC863D002064D48B00170E27 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DC863D012064D48B00170E27 /* UIAlertController+MediaPlayerRotation.h */,
+				DC863D022064D48B00170E27 /* UIAlertController+MediaPlayerRotation.m */,
+				DC863D032064D48B00170E27 /* UINavigationController+MediaPlayerRotation.h */,
+				DC863D042064D48B00170E27 /* UINavigationController+MediaPlayerRotation.m */,
+				DC863D052064D48B00170E27 /* UIViewController+MediaPlayerRotation.h */,
+				DC863D062064D48B00170E27 /* UIViewController+MediaPlayerRotation.m */,
+				DC863D072064D48B00170E27 /* UIWindow+CurrentViewController.h */,
+				DC863D082064D48B00170E27 /* UIWindow+CurrentViewController.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		DC863D112064D48B00170E27 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DC863D122064D48B00170E27 /* ZXMediaPlayerModel.h */,
+				DC863D132064D48B00170E27 /* ZXMediaPlayerModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DC863D282064D57700170E27 /* Live(直播测试) */ = {
+			isa = PBXGroup;
+			children = (
+				DC863D2B2064D59400170E27 /* ZXLiveListViewController.h */,
+				DC863D2C2064D59400170E27 /* ZXLiveListViewController.m */,
+			);
+			path = "Live(直播测试)";
+			sourceTree = "<group>";
+		};
+		DC863D292064D57700170E27 /* Vod(点播测试) */ = {
+			isa = PBXGroup;
+			children = (
+				DC863D2E2064D5A900170E27 /* ZXVodListViewController.h */,
+				DC863D2F2064D5A900170E27 /* ZXVodListViewController.m */,
+			);
+			path = "Vod(点播测试)";
+			sourceTree = "<group>";
+		};
+		DC863D2A2064D57700170E27 /* Publish(推流) */ = {
+			isa = PBXGroup;
+			children = (
+				DC452FFF206CF01E00A83680 /* ZXPublishListViewController.h */,
+				DC453000206CF01E00A83680 /* ZXPublishListViewController.m */,
+				DC453002206CF09300A83680 /* ZXPublishDetailViewController.h */,
+				DC453003206CF09300A83680 /* ZXPublishDetailViewController.m */,
+			);
+			name = "Publish(推流)";
+			path = Publish;
+			sourceTree = "<group>";
+		};
+		DC863D342064D66000170E27 /* UIBarButtonItem+item */ = {
+			isa = PBXGroup;
+			children = (
+				DC863D352064D66000170E27 /* UIBarButtonItem+item.h */,
+				DC863D362064D66000170E27 /* UIBarButtonItem+item.m */,
+			);
+			path = "UIBarButtonItem+item";
+			sourceTree = "<group>";
+		};
+		DC863D422064D8E800170E27 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DC863D3D2064D8CB00170E27 /* NSMutableArray+Safe.h */,
+				DC863D3F2064D8CC00170E27 /* NSMutableArray+Safe.m */,
+				DC863D3C2064D8CB00170E27 /* NSMutableDictionary+Safe.h */,
+				DC863D3E2064D8CC00170E27 /* NSMutableDictionary+Safe.m */,
+				DC863D3A2064D85B00170E27 /* NSString+Category.h */,
+				DC863D392064D85A00170E27 /* NSString+Category.m */,
+				DC863CEB2064D33100170E27 /* UIScrollView+Gesture.h */,
+				DC863CEC2064D33100170E27 /* UIScrollView+Gesture.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		DC863D432064D9DA00170E27 /* ThirdFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ThirdFrameworks;
+			sourceTree = "<group>";
+		};
+		DC863D4E2064E01100170E27 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				DC863D502064E03B00170E27 /* ZXDetailViewController.h */,
+				DC863D512064E03B00170E27 /* ZXDetailViewController.m */,
+				DC863D532064EB7A00170E27 /* ZXDetailCoverView.h */,
+				DC863D542064EB7A00170E27 /* ZXDetailCoverView.m */,
+				DC863D562064EBA200170E27 /* ZXDetailCoverModel.h */,
+				DC863D572064EBA200170E27 /* ZXDetailCoverModel.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		DC863D4F2064E02100170E27 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				DC36658F20688573007C0B69 /* Base */,
+				DC863D292064D57700170E27 /* Vod(点播测试) */,
+				DC863D282064D57700170E27 /* Live(直播测试) */,
+				DC863D2A2064D57700170E27 /* Publish(推流) */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		DC863D592064F39500170E27 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				DC863D5A2064F3B600170E27 /* ZXNetWorkMonitor.h */,
+				DC863D5B2064F3B600170E27 /* ZXNetWorkMonitor.m */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC863CA42064D0CA00170E27 /* ZXLivePlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC863CD12064D0CB00170E27 /* Build configuration list for PBXNativeTarget "ZXLivePlayer" */;
+			buildPhases = (
+				36111C7842430639A6EBA7BD /* [CP] Check Pods Manifest.lock */,
+				DC863CA12064D0CA00170E27 /* Sources */,
+				DC863CA22064D0CA00170E27 /* Frameworks */,
+				DC863CA32064D0CA00170E27 /* Resources */,
+				AD1F74B2D618A6EBD3A43151 /* [CP] Embed Pods Frameworks */,
+				F2528CB01D539489B4B4E23A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZXLivePlayer;
+			productName = ZXLivePlayer;
+			productReference = DC863CA52064D0CA00170E27 /* ZXLivePlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC863CBC2064D0CB00170E27 /* ZXLivePlayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC863CD42064D0CB00170E27 /* Build configuration list for PBXNativeTarget "ZXLivePlayerTests" */;
+			buildPhases = (
+				DC863CB92064D0CB00170E27 /* Sources */,
+				DC863CBA2064D0CB00170E27 /* Frameworks */,
+				DC863CBB2064D0CB00170E27 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC863CBF2064D0CB00170E27 /* PBXTargetDependency */,
+			);
+			name = ZXLivePlayerTests;
+			productName = ZXLivePlayerTests;
+			productReference = DC863CBD2064D0CB00170E27 /* ZXLivePlayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DC863CC72064D0CB00170E27 /* ZXLivePlayerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC863CD72064D0CB00170E27 /* Build configuration list for PBXNativeTarget "ZXLivePlayerUITests" */;
+			buildPhases = (
+				DC863CC42064D0CB00170E27 /* Sources */,
+				DC863CC52064D0CB00170E27 /* Frameworks */,
+				DC863CC62064D0CB00170E27 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC863CCA2064D0CB00170E27 /* PBXTargetDependency */,
+			);
+			name = ZXLivePlayerUITests;
+			productName = ZXLivePlayerUITests;
+			productReference = DC863CC82064D0CB00170E27 /* ZXLivePlayerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC863C9D2064D0CA00170E27 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = zhaoxin;
+				TargetAttributes = {
+					DC863CA42064D0CA00170E27 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					DC863CBC2064D0CB00170E27 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DC863CA42064D0CA00170E27;
+					};
+					DC863CC72064D0CB00170E27 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DC863CA42064D0CA00170E27;
+					};
+				};
+			};
+			buildConfigurationList = DC863CA02064D0CA00170E27 /* Build configuration list for PBXProject "ZXLivePlayer" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DC863C9C2064D0CA00170E27;
+			productRefGroup = DC863CA62064D0CA00170E27 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC863CA42064D0CA00170E27 /* ZXLivePlayer */,
+				DC863CBC2064D0CB00170E27 /* ZXLivePlayerTests */,
+				DC863CC72064D0CB00170E27 /* ZXLivePlayerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC863CA32064D0CA00170E27 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC863D212064D48B00170E27 /* ZXMediaPlayer.bundle in Resources */,
+				DC863CB22064D0CA00170E27 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC863CBB2064D0CB00170E27 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC863CC62064D0CB00170E27 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36111C7842430639A6EBA7BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZXLivePlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD1F74B2D618A6EBD3A43151 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZXLivePlayer/Pods-ZXLivePlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2528CB01D539489B4B4E23A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ZXLivePlayer/Pods-ZXLivePlayer-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZXLivePlayer/Pods-ZXLivePlayer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC863CA12064D0CA00170E27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC452FFC206CD76B00A83680 /* ZXPushControlView.m in Sources */,
+				DC863CE72064D1E600170E27 /* ZXNavigationController.m in Sources */,
+				DC863D152064D48B00170E27 /* ASValueTrackingSlider.m in Sources */,
+				DC863CE82064D1E600170E27 /* ZXTabBarController.m in Sources */,
+				DC863D5C2064F3B600170E27 /* ZXNetWorkMonitor.m in Sources */,
+				DC453004206CF09300A83680 /* ZXPublishDetailViewController.m in Sources */,
+				DC863D412064D8CC00170E27 /* NSMutableArray+Safe.m in Sources */,
+				DC452FF8206CD6DA00A83680 /* ZXPushPlayerView.m in Sources */,
+				DC453001206CF01E00A83680 /* ZXPublishListViewController.m in Sources */,
+				DC863D182064D48B00170E27 /* ZXBrightnessView.m in Sources */,
+				DC863D1C2064D48B00170E27 /* UINavigationController+MediaPlayerRotation.m in Sources */,
+				DC863D172064D48B00170E27 /* DQChangeAngleView.m in Sources */,
+				DC863D1D2064D48B00170E27 /* UIViewController+MediaPlayerRotation.m in Sources */,
+				DC863D2D2064D59400170E27 /* ZXLiveListViewController.m in Sources */,
+				DC863CB82064D0CA00170E27 /* main.m in Sources */,
+				DC863CED2064D33100170E27 /* UIScrollView+Gesture.m in Sources */,
+				DC863D522064E03B00170E27 /* ZXDetailViewController.m in Sources */,
+				DC863D552064EB7A00170E27 /* ZXDetailCoverView.m in Sources */,
+				DC863D142064D48B00170E27 /* ASValuePopUpView.m in Sources */,
+				DC863D1F2064D48B00170E27 /* MMMaterialDesignSpinner.m in Sources */,
+				DC863D3B2064D85B00170E27 /* NSString+Category.m in Sources */,
+				DC863D382064D66000170E27 /* UIBarButtonItem+item.m in Sources */,
+				DC863D1A2064D48B00170E27 /* ZXMediaPlayerLoadingView.m in Sources */,
+				DC863CAA2064D0CA00170E27 /* ZXAppDelegate.m in Sources */,
+				DC863CE62064D1E600170E27 /* ZXBaseViewController.m in Sources */,
+				DC863D162064D48B00170E27 /* DQChangeAngleModel.m in Sources */,
+				DC863D1B2064D48B00170E27 /* UIAlertController+MediaPlayerRotation.m in Sources */,
+				DC863D302064D5A900170E27 /* ZXVodListViewController.m in Sources */,
+				DC863D192064D48B00170E27 /* ZXMediaPlayerControlView.m in Sources */,
+				DC863D582064EBA200170E27 /* ZXDetailCoverModel.m in Sources */,
+				DC36659220688594007C0B69 /* ZXListBaseViewController.m in Sources */,
+				DC863D232064D48B00170E27 /* ZXMediaPlayerModel.m in Sources */,
+				DC863D402064D8CC00170E27 /* NSMutableDictionary+Safe.m in Sources */,
+				DC863D202064D48B00170E27 /* UINavigationController+FullscreenPopGesture.m in Sources */,
+				DC863D1E2064D48B00170E27 /* UIWindow+CurrentViewController.m in Sources */,
+				DC863D222064D48B00170E27 /* ZXMediaPlayerView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC863CB92064D0CB00170E27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC863CC22064D0CB00170E27 /* ZXLivePlayerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC863CC42064D0CB00170E27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC863CCD2064D0CB00170E27 /* ZXLivePlayerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC863CBF2064D0CB00170E27 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC863CA42064D0CA00170E27 /* ZXLivePlayer */;
+			targetProxy = DC863CBE2064D0CB00170E27 /* PBXContainerItemProxy */;
+		};
+		DC863CCA2064D0CB00170E27 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC863CA42064D0CA00170E27 /* ZXLivePlayer */;
+			targetProxy = DC863CC92064D0CB00170E27 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DC863CCF2064D0CB00170E27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DC863CD02064D0CB00170E27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC863CD22064D0CB00170E27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 676C0CA43DE884353E751AA6 /* Pods-ZXLivePlayer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XVV8977X8U;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ZXLivePlayer/Common/ThirdFrameworks",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/ZXLivePlayer/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.beijing2022.WinterOlympics;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC863CD32064D0CB00170E27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16AA995E71928A3D19E49EE4 /* Pods-ZXLivePlayer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XVV8977X8U;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ZXLivePlayer/Common/ThirdFrameworks",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/ZXLivePlayer/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.beijing2022.WinterOlympics;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DC863CD52064D0CB00170E27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3X7Q2W5F8J;
+				INFOPLIST_FILE = ZXLivePlayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ZXLivePlayer.ZXLivePlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZXLivePlayer.app/ZXLivePlayer";
+			};
+			name = Debug;
+		};
+		DC863CD62064D0CB00170E27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3X7Q2W5F8J;
+				INFOPLIST_FILE = ZXLivePlayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ZXLivePlayer.ZXLivePlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZXLivePlayer.app/ZXLivePlayer";
+			};
+			name = Release;
+		};
+		DC863CD82064D0CB00170E27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3X7Q2W5F8J;
+				INFOPLIST_FILE = ZXLivePlayerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ZXLivePlayer.ZXLivePlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ZXLivePlayer;
+			};
+			name = Debug;
+		};
+		DC863CD92064D0CB00170E27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3X7Q2W5F8J;
+				INFOPLIST_FILE = ZXLivePlayerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ZXLivePlayer.ZXLivePlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ZXLivePlayer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC863CA02064D0CA00170E27 /* Build configuration list for PBXProject "ZXLivePlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC863CCF2064D0CB00170E27 /* Debug */,
+				DC863CD02064D0CB00170E27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC863CD12064D0CB00170E27 /* Build configuration list for PBXNativeTarget "ZXLivePlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC863CD22064D0CB00170E27 /* Debug */,
+				DC863CD32064D0CB00170E27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC863CD42064D0CB00170E27 /* Build configuration list for PBXNativeTarget "ZXLivePlayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC863CD52064D0CB00170E27 /* Debug */,
+				DC863CD62064D0CB00170E27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC863CD72064D0CB00170E27 /* Build configuration list for PBXNativeTarget "ZXLivePlayerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC863CD82064D0CB00170E27 /* Debug */,
+				DC863CD92064D0CB00170E27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC863C9D2064D0CA00170E27 /* Project object */;
+}
