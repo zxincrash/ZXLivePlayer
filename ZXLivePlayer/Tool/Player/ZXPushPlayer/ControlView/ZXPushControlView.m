@@ -46,6 +46,13 @@
         make.width.height.mas_equalTo(40);
     }];
     
+    [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.backButton);
+        make.leading.equalTo(self.backButton.mas_trailing).offset(5);
+        make.trailing.equalTo(self);
+        make.height.mas_equalTo(buttonWH);
+    }];
+    
     [self.pushButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self).offset(10);
         make.bottom.equalTo(self).offset(-10);
@@ -139,6 +146,8 @@
 -(UILabel*)titleLab{
     if (_titleLab == nil) {
         _titleLab = [UILabel new];
+        _titleLab.text = @"测试";
+        _titleLab.textColor = [UIColor blackColor];
         _titleLab.font = [UIFont systemFontOfSize:15];
     }
     return _titleLab;
