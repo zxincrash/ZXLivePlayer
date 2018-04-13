@@ -10,11 +10,11 @@
 #import "ASValueTrackingSlider.h"
 #import "ZXMediaPlayer.h"
 
-typedef enum
+typedef NS_ENUM(NSInteger, DQMediaplayerRenderMode)
 {
     DQMediaplayerRenderMode_FILL_SCREEN  = 0,    // 图像铺满屏幕
     DQMediaplayerRenderMode_FILL_EDGE            // 图像长边填满屏幕
-}DQMediaplayerRenderMode;
+};
 
 @interface ZXMediaPlayerControlView : UIView
 

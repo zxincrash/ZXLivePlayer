@@ -9,33 +9,33 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-typedef enum
+typedef NS_ENUM(NSInteger, ZXNetWorkStatus)
 {
     ZXNetWorkStatus_Unknown= -1,
     ZXNetWorkStatus_Not_Reachable = 0,
     ZXNetWorkStatus_WWAN = 1,
     ZXNetWorkStatus_Wifi = 2
-}ZXNetWorkStatus;
+};
 
-typedef enum
+typedef NS_ENUM(NSInteger, MediaPlayerType)
 {
     MediaPlayerType_VOD, //点播
     MediaPlayerType_LIVE, //直播
     MediaPlayerType_PUSH,//推流
     MediaPlayerType_OTHER
-}MediaPlayerType;
+};
 
 
 
 // 播放器的几种状态
-typedef enum
+typedef NS_ENUM(NSInteger, MediaPlayerState)
 {
     MediaPlayerStateFailed,     // 播放失败
     MediaPlayerStateBuffering,  // 缓冲中
     MediaPlayerStatePlaying,    // 播放中
     MediaPlayerStateStopped,    // 停止播放
     MediaPlayerStatePause       // 暂停播放
-}MediaPlayerState;
+};
 
 @interface ZXMediaPlayerModel : NSObject
 /** 视频标题 */

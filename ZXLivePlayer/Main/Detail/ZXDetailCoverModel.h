@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "ZXCommon.h"
 
-typedef enum
+typedef NS_ENUM(NSInteger, GameStatus)
 {
     GameStatus_UNSTART,
     GameStatus_LOADING,
     GameStatus_PLAYING,
     GameStatus_OTHER
-}GameStatus;
+};
 
 @interface ZXDetailCoverModel : NSObject
 /** 标题 */

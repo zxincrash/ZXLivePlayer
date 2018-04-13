@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum
+typedef NS_ENUM(NSInteger, ZXNavigationBarType)
 {
     ZXNavigationBarType_BACK,
     ZXNavigationBarType_OTHER
-}ZXNavigationBarType;
+};
 
 @interface UIBarButtonItem (item)
 

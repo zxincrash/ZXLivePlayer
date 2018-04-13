@@ -11,7 +11,7 @@
 
 @class DQGameModel;
 @class ZXMediaPlayerView;
-typedef enum
+typedef NS_ENUM(NSInteger, AngleType)
 {
     AngleType_MAIN1 = 100,
     AngleType_MAIN2,
@@ -19,7 +19,7 @@ typedef enum
     AngleType_SOUTH_NORTH,
     AngleType_WEST_SOUTH,
     AngleType_WEST_NORTH
-}AngleType;
+};
 
 @protocol DQChangeAngleViewDelegate<NSObject>
 
