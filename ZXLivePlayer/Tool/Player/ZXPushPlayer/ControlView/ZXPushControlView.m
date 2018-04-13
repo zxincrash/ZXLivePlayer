@@ -63,6 +63,12 @@
         make.leading.equalTo(self.cameraButton.mas_trailing).offset(5);
         make.width.height.mas_equalTo(buttonWH);
     }];
+    
+    [self.settingButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.pushButton);
+        make.leading.equalTo(self.directionButton.mas_trailing).offset(5);
+        make.width.height.mas_equalTo(buttonWH);
+    }];
 }
 
 -(void)setPushButtonState:(BOOL)selected{
