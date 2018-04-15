@@ -24,10 +24,10 @@
 #define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
 #if DEVELOPMENT
-#define BASE_URL @"http://zhibo.xahacker.com/zhibo.asmx"
+#define BASE_URL @""
 
 #else
-#define BASE_URL @"http://zhibo.xahacker.com/zhibo.asmx"
+#define BASE_URL @""
 
 #endif
 
