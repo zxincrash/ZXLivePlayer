@@ -13,6 +13,7 @@
 
 -(void)quitPushPlayerView;
 
+
 @end
 
 @interface ZXPushPlayerView : UIView

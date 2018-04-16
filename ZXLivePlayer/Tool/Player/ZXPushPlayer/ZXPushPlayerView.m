@@ -249,6 +249,51 @@
     }
 }
 
+- (void)onSetBeautyStyle:(int)beautyStyle beautyLevel:(float)beautyLevel whitenessLevel:(float)whitenessLevel ruddinessLevel:(float)ruddinessLevel{
+    [self.txLivePush setBeautyStyle:beautyStyle beautyLevel:beautyLevel whitenessLevel:whitenessLevel ruddinessLevel:ruddinessLevel];
+}
+
+- (void)onSetEyeScaleLevel:(float)eyeScaleLevel {
+    [self.txLivePush setEyeScaleLevel:eyeScaleLevel];
+}
+
+- (void)onSetFaceScaleLevel:(float)faceScaleLevel {
+    [self.txLivePush setFaceScaleLevel:faceScaleLevel];
+}
+
+- (void)onSetFilter:(UIImage *)filterImage {
+    [self.txLivePush setFilter:filterImage];
+}
+
+
+- (void)onSetGreenScreenFile:(NSURL *)file {
+    [self.txLivePush setGreenScreenFile:file];
+}
+
+- (void)onSelectMotionTmpl:(NSString *)tmplName inDir:(NSString *)tmplDir {
+    [self.txLivePush selectMotionTmpl:tmplName inDir:tmplDir];
+}
+
+- (void)onSetFaceVLevel:(float)vLevel{
+    [self.txLivePush setFaceVLevel:vLevel];
+}
+
+- (void)onSetFaceShortLevel:(float)shortLevel{
+    [self.txLivePush setFaceShortLevel:shortLevel];
+}
+
+- (void)onSetNoseSlimLevel:(float)slimLevel{
+    [self.txLivePush setNoseSlimLevel:slimLevel];
+}
+
+- (void)onSetChinLevel:(float)chinLevel{
+    [self.txLivePush setChinLevel:chinLevel];
+}
+
+- (void)onSetMixLevel:(float)mixLevel{
+    [self.txLivePush setSpecialRatio:mixLevel / 10.0];
+}
+
 #pragma -mark - TXLivePushListener
 -(void)onPushEvent:(int)EvtID withParam:(NSDictionary *)param{
     NSDictionary* dict = param;

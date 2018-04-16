@@ -17,6 +17,21 @@
 /** 横竖屏推流设置 */
 -(void)directionAction:(BOOL)direction;
 
+
+//美颜配置代理方法
+- (void)onSetBeautyStyle:(int)beautyStyle beautyLevel:(float)beautyLevel whitenessLevel:(float)whitenessLevel ruddinessLevel:(float)ruddinessLevel;
+- (void)onSetMixLevel:(float)mixLevel;
+- (void)onSetEyeScaleLevel:(float)eyeScaleLevel;
+- (void)onSetFaceScaleLevel:(float)faceScaleLevel;
+- (void)onSetFaceBeautyLevel:(float)beautyLevel;
+- (void)onSetFaceVLevel:(float)vLevel;
+- (void)onSetChinLevel:(float)chinLevel;
+- (void)onSetFaceShortLevel:(float)shortLevel;
+- (void)onSetNoseSlimLevel:(float)slimLevel;
+- (void)onSetFilter:(UIImage*)filterImage;
+- (void)onSetGreenScreenFile:(NSURL *)file;
+- (void)onSelectMotionTmpl:(NSString *)tmplName inDir:(NSString *)tmplDir;
+
 @end
 
 @interface ZXPushControlView : UIView

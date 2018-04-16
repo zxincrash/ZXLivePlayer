@@ -10,7 +10,7 @@
 #import "ZXMediaPlayer.h"
 #import "ZXBeautySettingPanel.h"
 
-@interface ZXPushControlView()
+@interface ZXPushControlView()<BeautySettingPanelDelegate,BeautyLoadPituDelegate>
 @property (strong, nonatomic) UIButton *backButton;//返回
 @property (strong, nonatomic) UIButton *cameraButton;//照相机
 
@@ -142,6 +142,75 @@
         button.selected = !button.selected;
     }
 }
+
+#pragma -mark - BeautySettingPanelDelegate
+- (void)onSetBeautyStyle:(int)beautyStyle beautyLevel:(float)beautyLevel whitenessLevel:(float)whitenessLevel ruddinessLevel:(float)ruddinessLevel{
+    if ([self.delegate respondsToSelector:@selector(onSetBeautyStyle:beautyLevel:whitenessLevel:ruddinessLevel:)]) {
+        [self.delegate onSetBeautyStyle:beautyStyle beautyLevel:beautyLevel whitenessLevel:whitenessLevel ruddinessLevel:ruddinessLevel];
+    }
+}
+
+- (void)onSetEyeScaleLevel:(float)eyeScaleLevel {
+    if ([self.delegate respondsToSelector:@selector(onSetEyeScaleLevel:)]) {
+        [self.delegate onSetEyeScaleLevel:eyeScaleLevel];
+    }
+}
+
+- (void)onSetFaceScaleLevel:(float)faceScaleLevel {
+    if ([self.delegate respondsToSelector:@selector(onSetFaceScaleLevel:)]) {
+        [self.delegate onSetFaceScaleLevel:faceScaleLevel];
+    }
+}
+
+- (void)onSetFilter:(UIImage *)filterImage {
+    if ([self.delegate respondsToSelector:@selector(onSetFilter:)]) {
+        [self.delegate onSetFilter:filterImage];
+    }
+}
+
+
+- (void)onSetGreenScreenFile:(NSURL *)file {
+    if ([self.delegate respondsToSelector:@selector(onSetGreenScreenFile:)]) {
+        [self.delegate onSetGreenScreenFile:file];
+    }
+}
+
+- (void)onSelectMotionTmpl:(NSString *)tmplName inDir:(NSString *)tmplDir {
+    if ([self.delegate respondsToSelector:@selector(onSelectMotionTmpl:inDir:)]) {
+        [self.delegate onSelectMotionTmpl:tmplName inDir:tmplDir];
+    }
+}
+
+- (void)onSetFaceVLevel:(float)vLevel{
+    if ([self.delegate respondsToSelector:@selector(onSetFaceVLevel:)]) {
+        [self.delegate onSetFaceVLevel:vLevel];
+    }
+}
+
+- (void)onSetFaceShortLevel:(float)shortLevel{
+    if ([self.delegate respondsToSelector:@selector(onSetFaceShortLevel:)]) {
+        [self.delegate onSetFaceShortLevel:shortLevel];
+    }
+}
+
+- (void)onSetNoseSlimLevel:(float)slimLevel{
+    if ([self.delegate respondsToSelector:@selector(onSetNoseSlimLevel:)]) {
+        [self.delegate onSetNoseSlimLevel:slimLevel];
+    }
+}
+
+- (void)onSetChinLevel:(float)chinLevel{
+    if ([self.delegate respondsToSelector:@selector(onSetChinLevel:)]) {
+        [self.delegate onSetChinLevel:chinLevel];
+    }
+}
+
+- (void)onSetMixLevel:(float)mixLevel{
+    if ([self.delegate respondsToSelector:@selector(onSetMixLevel:)]) {
+        [self.delegate onSetMixLevel:mixLevel];
+    }
+}
+
 #pragma -mark - 懒加载控件
 -(UIButton *)backButton{
     if (_backButton == nil) {
