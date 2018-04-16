@@ -18,6 +18,8 @@
 #define kMediaPlayerScreenHeight  [[UIScreen mainScreen] bounds].size.height
 // 颜色值RGB
 #define RGBA(r,g,b,a)  [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+
 // 图片路径
 #define MediaPlayerSrcName(file)  [@"ZXMediaPlayer.bundle" stringByAppendingPathComponent:file]
 

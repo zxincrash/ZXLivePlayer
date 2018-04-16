@@ -58,6 +58,8 @@
 		DC863D552064EB7A00170E27 /* ZXDetailCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863D542064EB7A00170E27 /* ZXDetailCoverView.m */; };
 		DC863D582064EBA200170E27 /* ZXDetailCoverModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863D572064EBA200170E27 /* ZXDetailCoverModel.m */; };
 		DC863D5C2064F3B600170E27 /* ZXNetWorkMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863D5B2064F3B600170E27 /* ZXNetWorkMonitor.m */; };
+		DCB675EE208433F500000120 /* ZXBeautySettingPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB675ED208433F500000120 /* ZXBeautySettingPanel.m */; };
+		DCB675F12084349100000120 /* TextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB675F02084349100000120 /* TextCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +177,11 @@
 		DC863D572064EBA200170E27 /* ZXDetailCoverModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXDetailCoverModel.m; sourceTree = "<group>"; };
 		DC863D5A2064F3B600170E27 /* ZXNetWorkMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXNetWorkMonitor.h; sourceTree = "<group>"; };
 		DC863D5B2064F3B600170E27 /* ZXNetWorkMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXNetWorkMonitor.m; sourceTree = "<group>"; };
+		DCB675EC208433F500000120 /* ZXBeautySettingPanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXBeautySettingPanel.h; sourceTree = "<group>"; };
+		DCB675ED208433F500000120 /* ZXBeautySettingPanel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXBeautySettingPanel.m; sourceTree = "<group>"; };
+		DCB675EF2084349100000120 /* TextCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextCell.h; sourceTree = "<group>"; };
+		DCB675F02084349100000120 /* TextCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextCell.m; sourceTree = "<group>"; };
+		DCB675F22084382F00000120 /* PituMotionAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PituMotionAddress.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,8 +269,13 @@
 		DC452FF9206CD75500A83680 /* ControlView */ = {
 			isa = PBXGroup;
 			children = (
+				DCB675F22084382F00000120 /* PituMotionAddress.h */,
 				DC452FFA206CD76B00A83680 /* ZXPushControlView.h */,
 				DC452FFB206CD76B00A83680 /* ZXPushControlView.m */,
+				DCB675EC208433F500000120 /* ZXBeautySettingPanel.h */,
+				DCB675ED208433F500000120 /* ZXBeautySettingPanel.m */,
+				DCB675EF2084349100000120 /* TextCell.h */,
+				DCB675F02084349100000120 /* TextCell.m */,
 			);
 			path = ControlView;
 			sourceTree = "<group>";
@@ -757,10 +769,12 @@
 				DC452FFC206CD76B00A83680 /* ZXPushControlView.m in Sources */,
 				DC863CE72064D1E600170E27 /* ZXNavigationController.m in Sources */,
 				DC863D152064D48B00170E27 /* ASValueTrackingSlider.m in Sources */,
+				DCB675EE208433F500000120 /* ZXBeautySettingPanel.m in Sources */,
 				DC863CE82064D1E600170E27 /* ZXTabBarController.m in Sources */,
 				DC863D5C2064F3B600170E27 /* ZXNetWorkMonitor.m in Sources */,
 				DC453004206CF09300A83680 /* ZXPublishDetailViewController.m in Sources */,
 				DC863D412064D8CC00170E27 /* NSMutableArray+Safe.m in Sources */,
+				DCB675F12084349100000120 /* TextCell.m in Sources */,
 				DC452FF8206CD6DA00A83680 /* ZXPushPlayerView.m in Sources */,
 				DC453001206CF01E00A83680 /* ZXPublishListViewController.m in Sources */,
 				DC863D182064D48B00170E27 /* ZXBrightnessView.m in Sources */,
