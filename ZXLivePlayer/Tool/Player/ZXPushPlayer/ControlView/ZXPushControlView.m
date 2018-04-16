@@ -15,6 +15,7 @@
 
 @property (strong, nonatomic) UILabel *titleLab;//标题
 
+@property (strong, nonatomic) UIButton *beautyButton;
 @property (strong, nonatomic) UIButton *pushButton;
 @property (strong, nonatomic) UIButton *directionButton;
 @property (strong, nonatomic) UIButton *settingButton;
@@ -28,6 +29,7 @@
     if (self) {
         [self addSubview:self.backButton];
         [self addSubview:self.cameraButton];
+        [self addSubview:self.beautyButton];
         [self addSubview:self.pushButton];
         [self addSubview:self.titleLab];
         [self addSubview:self.directionButton];
@@ -65,9 +67,15 @@
         make.width.height.mas_equalTo(buttonWH);
     }];
     
-    [self.directionButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.beautyButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.pushButton);
         make.leading.equalTo(self.cameraButton.mas_trailing).offset(5);
+        make.width.height.mas_equalTo(buttonWH);
+    }];
+    
+    [self.directionButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.pushButton);
+        make.leading.equalTo(self.beautyButton.mas_trailing).offset(5);
         make.width.height.mas_equalTo(buttonWH);
     }];
     
@@ -104,6 +112,10 @@
         
         button.selected = !button.selected;
     }
+}
+
+-(void)clickBeautyButton:(UIButton*)button{
+    
 }
 
 -(void)clickDirectionButton:(UIButton*)button{
@@ -152,6 +164,16 @@
     }
     return _titleLab;
 }
+
+-(UIButton *)beautyButton{
+    if (_beautyButton == nil) {
+        _beautyButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_beautyButton setImage:[UIImage imageNamed:@"beauty"] forState:UIControlStateNormal];
+        [_beautyButton addTarget:self action:@selector(clickBeautyButton:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _beautyButton;
+}
+
 -(UIButton*)directionButton{
     if (_directionButton == nil) {
         _directionButton = [UIButton buttonWithType:UIButtonTypeCustom];

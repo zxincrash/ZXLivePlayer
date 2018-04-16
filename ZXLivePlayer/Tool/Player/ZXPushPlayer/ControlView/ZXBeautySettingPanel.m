@@ -910,7 +910,7 @@
         _beautySlider = [[UISlider alloc] init];
         _beautySlider.minimumValue = 0;
         _beautySlider.maximumValue = 10;
-        [_beautySlider setMinimumTrackTintColor:UIColorFromRGB(0x0ACCAC)];
+        [_beautySlider setMinimumTrackTintColor:UIColorFromRGB((0x0ACCAC))];
         [_beautySlider setMaximumTrackTintColor:[UIColor whiteColor]];
         [_beautySlider addTarget:self action:@selector(onValueChanged:) forControlEvents:UIControlEventValueChanged];
     }
