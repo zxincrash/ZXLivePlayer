@@ -11,17 +11,17 @@
 #import "ZXBeautySettingPanel.h"
 
 @interface ZXPushControlView()
-@property (strong, nonatomic) UIButton *backButton;
+@property (strong, nonatomic) UIButton *backButton;//返回
 @property (strong, nonatomic) UIButton *cameraButton;//照相机
 
 @property (strong, nonatomic) UILabel *titleLab;//标题
 
-@property (strong, nonatomic) UIButton *beautyButton;
-@property (strong, nonatomic) ZXBeautySettingPanel *beautySettingPanel;
+@property (strong, nonatomic) UIButton *beautyButton;//美颜按钮
+@property (strong, nonatomic) ZXBeautySettingPanel *beautySettingPanel;//美颜设置界面
 
 @property (strong, nonatomic) UIButton *pushButton;
-@property (strong, nonatomic) UIButton *directionButton;
-@property (strong, nonatomic) UIButton *settingButton;
+@property (strong, nonatomic) UIButton *directionButton;//推流方向
+@property (strong, nonatomic) UIButton *settingButton;//设置
 
 @end
 
@@ -46,6 +46,7 @@
     return self;
 }
 
+//设置控件约束
 -(void)makeSubViewsConstraints{
     CGFloat buttonWH = 40;
     [self.backButton mas_makeConstraints:^(MASConstraintMaker *make) {
