@@ -8,6 +8,7 @@
 
 #import "ZXPushControlView.h"
 #import "ZXMediaPlayer.h"
+#import "ZXBeautySettingPanel.h"
 
 @interface ZXPushControlView()
 @property (strong, nonatomic) UIButton *backButton;
@@ -16,6 +17,8 @@
 @property (strong, nonatomic) UILabel *titleLab;//标题
 
 @property (strong, nonatomic) UIButton *beautyButton;
+@property (strong, nonatomic) ZXBeautySettingPanel *beautySettingPanel;
+
 @property (strong, nonatomic) UIButton *pushButton;
 @property (strong, nonatomic) UIButton *directionButton;
 @property (strong, nonatomic) UIButton *settingButton;
@@ -30,6 +33,8 @@
         [self addSubview:self.backButton];
         [self addSubview:self.cameraButton];
         [self addSubview:self.beautyButton];
+        [self addSubview:self.beautySettingPanel];
+
         [self addSubview:self.pushButton];
         [self addSubview:self.titleLab];
         [self addSubview:self.directionButton];
@@ -71,6 +76,14 @@
         make.bottom.equalTo(self.pushButton);
         make.leading.equalTo(self.cameraButton.mas_trailing).offset(5);
         make.width.height.mas_equalTo(buttonWH);
+    }];
+    
+    NSUInteger controlHeight = [ZXBeautySettingPanel getHeight];
+    [self.beautySettingPanel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(self);
+        make.bottom.equalTo(self.pushButton.mas_top).offset(-3);
+        make.width.mas_equalTo(kMediaPlayerScreenWidth);
+        make.height.mas_equalTo(controlHeight);
     }];
     
     [self.directionButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -115,7 +128,10 @@
 }
 
 -(void)clickBeautyButton:(UIButton*)button{
+    self.beautySettingPanel.hidden = !button.selected;
     
+    button.selected = !button.selected;
+
 }
 
 -(void)clickDirectionButton:(UIButton*)button{
@@ -169,9 +185,20 @@
     if (_beautyButton == nil) {
         _beautyButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_beautyButton setImage:[UIImage imageNamed:@"beauty"] forState:UIControlStateNormal];
+        [_beautyButton setImage:[UIImage imageNamed:@"beauty_dis"] forState:UIControlStateSelected];
         [_beautyButton addTarget:self action:@selector(clickBeautyButton:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _beautyButton;
+}
+
+-(ZXBeautySettingPanel*)beautySettingPanel{
+    if (_beautySettingPanel == nil) {
+        NSUInteger controlHeight = [ZXBeautySettingPanel getHeight];
+        _beautySettingPanel = [[ZXBeautySettingPanel alloc] initWithFrame:CGRectMake(0, kMediaPlayerScreenHeight - controlHeight - 40, kMediaPlayerScreenWidth, controlHeight)];
+        _beautySettingPanel.delegate = self;
+        _beautySettingPanel.pituDelegate = self;
+    }
+    return _beautySettingPanel;
 }
 
 -(UIButton*)directionButton{
