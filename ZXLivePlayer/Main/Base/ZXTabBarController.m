@@ -94,11 +94,7 @@
 {
     NSInteger selectedIndex = tabBarController.selectedIndex;
     if (self.currentIndex == selectedIndex) {
-        //选中当前选中的tabbar
-        if ([viewController.childViewControllers.firstObject isKindOfClass:[ZXVodListViewController class]]) {
-            ZXVodListViewController *gameVC = viewController.childViewControllers.firstObject;
-            
-        }
+
     }else{
         
         self.currentIndex = selectedIndex;

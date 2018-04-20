@@ -77,9 +77,8 @@
 #pragma mark -- 刷新相关
 - (void)addHeaderAndFooterWithView:(UIScrollView *)view
 {
-//    view.mj_header = [DQRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshing)];
-//
-//    view.mj_footer = [DQRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRefreshing)];
+
+    
 }
 
 - (void)headerRefreshing
