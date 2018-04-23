@@ -34,15 +34,15 @@ typedef NS_ENUM(NSInteger, PanDirection){
 /** 是否开启预览图 */
 @property (nonatomic, assign) BOOL hasPreviewView;
 /** 设置代理 */
-@property (nonatomic, weak) id<MediaPlayerDelegate>      delegate;
+@property (nonatomic, weak) id<MediaPlayerDelegate> delegate;
 /** 是否被用户暂停 */
-@property (nonatomic, assign, readonly) BOOL          isPauseByUser;
+@property (nonatomic, assign, readonly) BOOL isPauseByUser;
 /** 播发器的几种状态 */
 @property (nonatomic, assign, readonly) MediaPlayerState state;
 /** 静音（默认为NO）*/
-@property (nonatomic, assign) BOOL                    mute;
+@property (nonatomic, assign) BOOL mute;
 /** 是否允许自动转屏, 默认YES */
-@property (nonatomic, assign) BOOL                    allowAutoRotate;
+@property (nonatomic, assign) BOOL allowAutoRotate;
 /** 允许双指点击进行全屏/非全屏切换, 默认NO */
 @property (nonatomic, assign) BOOL                    enableFullScreenSwitchWith2Fingers;
 /** 播放器添加到的视图控制器, 包含MediaPlayerView容器视图的视图控制器 */
@@ -80,16 +80,13 @@ typedef NS_ENUM(NSInteger, PanDirection){
  */
 - (void)resetToPlayNewVideo:(ZXMediaPlayerModel *)playerModel;
 
-/**
- *  播放
- */
+/** 播放 */
 - (void)play;
 
-/**
- * 暂停
- */
+/** 暂停 */
 - (void)pause;
 
+/** 结束播放 */
 - (void)clearPlay;
 
 @end
