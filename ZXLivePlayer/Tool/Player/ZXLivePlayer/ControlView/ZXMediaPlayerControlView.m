@@ -124,7 +124,9 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
         
         [self.bottomImageView addSubview:self.fullScreenBtn];
         [self.bottomImageView addSubview:self.currentTimeLabel];
+        
         if (MediaPlayerType_VOD == model.mediaPlayerType) {
+            //点播时 添加播放进度的控制UI
             [self.bottomImageView addSubview:self.startBtn];
             [self.bottomImageView addSubview:self.progressView];
             [self.bottomImageView addSubview:self.videoSlider];
@@ -374,7 +376,9 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     }
 }
 // 不做处理，只是为了滑动slider其他地方不响应其他手势
-- (void)panRecognizer:(UIPanGestureRecognizer *)sender {}
+- (void)panRecognizer:(UIPanGestureRecognizer *)sender {
+    
+}
 
 - (void)backBtnClick:(UIButton *)sender {
     // 状态条的方向旋转的方向,来判断当前屏幕的方向
@@ -531,7 +535,6 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     }
     self.lockBtn.hidden         = !self.isFullScreen;
     self.fullScreenBtn.selected = self.isFullScreen;
-//    self.topImageView.hidden = !self.isFullScreen;
     UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
     if (orientation == UIDeviceOrientationFaceUp || orientation == UIDeviceOrientationFaceDown || orientation == UIDeviceOrientationUnknown || orientation == UIDeviceOrientationPortraitUpsideDown) { return; }
     if (MediaPlayerOrientationIsLandscape) {
@@ -548,7 +551,6 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     }
     self.fullScreen             = YES;
     self.lockBtn.hidden         = !self.isFullScreen;
-//    self.topImageView.hidden = !self.isFullScreen;
 
     self.fullScreenBtn.selected = self.isFullScreen;
     [self.backBtn setImage:MediaPlayerImage(@"MediaPlayer_back_full") forState:UIControlStateNormal];
@@ -572,7 +574,6 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 - (void)setOrientationPortraitConstraint {
     self.fullScreen             = NO;
     self.lockBtn.hidden         = !self.isFullScreen;
-//    self.topImageView.hidden = !self.isFullScreen;
 
     self.fullScreenBtn.selected = self.isFullScreen;
     [self layoutIfNeeded];
@@ -673,7 +674,6 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 }
 
 #pragma mark - setter
-
 - (void)setShrink:(BOOL)shrink {
     _shrink = shrink;
     self.closeBtn.hidden = !shrink;
@@ -686,7 +686,6 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 }
 
 #pragma mark - getter
-
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
@@ -717,9 +716,8 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 
 - (UIImageView *)bottomImageView {
     if (!_bottomImageView) {
-        _bottomImageView                        = [[UIImageView alloc] init];
+        _bottomImageView = [[UIImageView alloc] init];
         _bottomImageView.userInteractionEnabled = YES;
-//        _bottomImageView.image                  = MediaPlayerImage(@"MediaPlayer_bottom_shadow");
     }
     return _bottomImageView;
 }
@@ -766,22 +764,22 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 
 - (UIProgressView *)progressView {
     if (!_progressView) {
-        _progressView                   = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+        _progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
         _progressView.progressTintColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.5];
-        _progressView.trackTintColor    = [UIColor clearColor];
+        _progressView.trackTintColor = [UIColor clearColor];
     }
     return _progressView;
 }
 
 - (ASValueTrackingSlider *)videoSlider {
     if (!_videoSlider) {
-        _videoSlider                       = [[ASValueTrackingSlider alloc] init];
+        _videoSlider = [[ASValueTrackingSlider alloc] init];
         _videoSlider.popUpViewCornerRadius = 0.0;
         _videoSlider.popUpViewColor = RGBA(19, 19, 9, 1);
         _videoSlider.popUpViewArrowLength = 8;
         
         [_videoSlider setThumbImage:MediaPlayerImage(@"MediaPlayer_slider") forState:UIControlStateNormal];
-        _videoSlider.maximumValue          = 1;
+        _videoSlider.maximumValue = 1;
         _videoSlider.minimumTrackTintColor = [UIColor whiteColor];
         _videoSlider.maximumTrackTintColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5];
         
@@ -808,9 +806,9 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 
 - (UILabel *)totalTimeLabel {
     if (!_totalTimeLabel) {
-        _totalTimeLabel               = [[UILabel alloc] init];
-        _totalTimeLabel.textColor     = [UIColor whiteColor];
-        _totalTimeLabel.font          = [UIFont systemFontOfSize:12.0f];
+        _totalTimeLabel = [[UILabel alloc] init];
+        _totalTimeLabel.textColor = [UIColor whiteColor];
+        _totalTimeLabel.font = [UIFont systemFontOfSize:12.0f];
         _totalTimeLabel.textAlignment = NSTextAlignmentCenter;
     }
     return _totalTimeLabel;
@@ -829,9 +827,6 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 - (ZXMediaPlayerLoadingView *)activity {
     if (!_activity) {
         _activity = [[ZXMediaPlayerLoadingView alloc] init];
-//        _activity.lineWidth = 1;
-//        _activity.duration  = 1;
-//        _activity.tintColor = [[UIColor whiteColor] colorWithAlphaComponent:0.9];
     }
     return _activity;
 }
@@ -892,9 +887,9 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 
 - (UIView *)fastView {
     if (!_fastView) {
-        _fastView                     = [[UIView alloc] init];
-        _fastView.backgroundColor     = RGBA(0, 0, 0, 0.8);
-        _fastView.layer.cornerRadius  = 4;
+        _fastView = [[UIView alloc] init];
+        _fastView.backgroundColor = RGBA(0, 0, 0, 0.8);
+        _fastView.layer.cornerRadius = 4;
         _fastView.layer.masksToBounds = YES;
     }
     return _fastView;
@@ -909,19 +904,19 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 
 - (UILabel *)fastTimeLabel {
     if (!_fastTimeLabel) {
-        _fastTimeLabel               = [[UILabel alloc] init];
-        _fastTimeLabel.textColor     = [UIColor whiteColor];
+        _fastTimeLabel = [[UILabel alloc] init];
+        _fastTimeLabel.textColor = [UIColor whiteColor];
         _fastTimeLabel.textAlignment = NSTextAlignmentCenter;
-        _fastTimeLabel.font          = [UIFont systemFontOfSize:14.0];
+        _fastTimeLabel.font = [UIFont systemFontOfSize:14.0];
     }
     return _fastTimeLabel;
 }
 
 - (UIProgressView *)fastProgressView {
     if (!_fastProgressView) {
-        _fastProgressView                   = [[UIProgressView alloc] init];
+        _fastProgressView = [[UIProgressView alloc] init];
         _fastProgressView.progressTintColor = [UIColor whiteColor];
-        _fastProgressView.trackTintColor    = [[UIColor lightGrayColor] colorWithAlphaComponent:0.4];
+        _fastProgressView.trackTintColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.4];
     }
     return _fastProgressView;
 }
@@ -937,9 +932,9 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 
 - (UIProgressView *)bottomProgressView {
     if (!_bottomProgressView) {
-        _bottomProgressView                   = [[UIProgressView alloc] init];
+        _bottomProgressView = [[UIProgressView alloc] init];
         _bottomProgressView.progressTintColor = [UIColor redColor];
-        _bottomProgressView.trackTintColor    = [UIColor clearColor];
+        _bottomProgressView.trackTintColor = [UIColor clearColor];
     }
     return _bottomProgressView;
 }
@@ -961,20 +956,20 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     [self.activity stopLoading];
     self.backgroundColor = [UIColor clearColor];
 
-    self.videoSlider.value           = 0;
+    self.videoSlider.value = 0;
     self.bottomProgressView.progress = 0;
-    self.progressView.progress       = 0;
-    self.currentTimeLabel.text       = @"00:00";
-    self.totalTimeLabel.text         = @"00:00";
-    self.fastView.hidden             = YES;
-    self.repeatBtn.hidden            = YES;
-    //    self.playBtn.hidden             = YES;
-    self.resolutionView.hidden       = YES;
-    self.failBtn.hidden              = YES;
-    self.shrink                      = NO;
-    self.showing                     = NO;
-    self.playeEnd                    = NO;
-    self.lockBtn.hidden              = !self.isFullScreen;
+    self.progressView.progress = 0;
+    self.currentTimeLabel.text = @"00:00";
+    self.totalTimeLabel.text = @"00:00";
+    self.fastView.hidden = YES;
+    self.repeatBtn.hidden = YES;
+
+    self.resolutionView.hidden = YES;
+    self.failBtn.hidden = YES;
+    self.shrink = NO;
+    self.showing = NO;
+    self.playeEnd = NO;
+    self.lockBtn.hidden = !self.isFullScreen;
     
     self.placeholderImageView.alpha  = 1;
     self.changeAngleBtn.alpha = 1;
@@ -983,15 +978,15 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 }
 
 - (void)mediaPlayerResetControlViewForResolution {
-    self.fastView.hidden        = YES;
-    self.repeatBtn.hidden       = YES;
+    self.fastView.hidden = YES;
+    self.repeatBtn.hidden = YES;
     self.resolutionView.hidden  = YES;
-//    self.playBtn.hidden        = YES;
-    self.failBtn.hidden         = YES;
-    self.backgroundColor        = [UIColor clearColor];
-    self.shrink                 = NO;
-    self.showing                = NO;
-    self.playeEnd               = NO;
+
+    self.failBtn.hidden = YES;
+    self.backgroundColor = [UIColor clearColor];
+    self.shrink = NO;
+    self.showing = NO;
+    self.playeEnd = NO;
 }
 
 /**
@@ -1075,10 +1070,10 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     NSInteger durSec = totalTime % 60;//总分钟
     if (!self.isDragged) {
         // 更新slider
-        self.videoSlider.value           = value;
+        self.videoSlider.value = value;
         self.bottomProgressView.progress = value;
         // 更新当前播放时间
-        self.currentTimeLabel.text       = [NSString stringWithFormat:@"%02zd:%02zd", proMin, proSec];
+        self.currentTimeLabel.text = [NSString stringWithFormat:@"%02zd:%02zd", proMin, proSec];
     }
     // 更新总时间
     self.totalTimeLabel.text = [NSString stringWithFormat:@"%02zd:%02zd", durMin, durSec];
@@ -1098,18 +1093,18 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     NSInteger durSec = totalTime % 60;//总分钟
     
     NSString *currentTimeStr = [NSString stringWithFormat:@"%02zd:%02zd", proMin, proSec];
-    NSString *totalTimeStr   = [NSString stringWithFormat:@"%02zd:%02zd", durMin, durSec];
-    CGFloat  draggedValue    = (CGFloat)draggedTime/(CGFloat)totalTime;
-    NSString *timeStr        = [NSString stringWithFormat:@"%@ / %@", currentTimeStr, totalTimeStr];
+    NSString *totalTimeStr = [NSString stringWithFormat:@"%02zd:%02zd", durMin, durSec];
+    CGFloat  draggedValue = (CGFloat)draggedTime/(CGFloat)totalTime;
+    NSString *timeStr = [NSString stringWithFormat:@"%@ / %@", currentTimeStr, totalTimeStr];
     
     // 显示、隐藏预览窗
     self.videoSlider.popUpView.hidden = !preview;
     // 更新slider的值
-    self.videoSlider.value            = draggedValue;
+    self.videoSlider.value = draggedValue;
     // 更新bottomProgressView的值
-    self.bottomProgressView.progress  = draggedValue;
+    self.bottomProgressView.progress = draggedValue;
     // 更新当前时间
-    self.currentTimeLabel.text        = currentTimeStr;
+    self.currentTimeLabel.text = currentTimeStr;
     // 正在拖动控制播放进度
     self.dragged = YES;
     
@@ -1118,8 +1113,8 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     } else {
         self.fastImageView.image = MediaPlayerImage(@"MediaPlayer_fast_backward");
     }
-    self.fastView.hidden           = preview;
-    self.fastTimeLabel.text        = timeStr;
+    self.fastView.hidden = preview;
+    self.fastTimeLabel.text = timeStr;
     self.fastProgressView.progress = draggedValue;
     
 }
@@ -1208,8 +1203,8 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 /** 播放完了 */
 - (void)mediaPlayerPlayEnd {
     self.repeatBtn.hidden = YES;
-    self.playeEnd         = YES;
-    self.showing          = NO;
+    self.playeEnd = YES;
+    self.showing = NO;
     // 隐藏controlView
     [self hideControlView];
     self.backgroundColor  = RGBA(0, 0, 0, .3);

@@ -54,7 +54,6 @@ typedef NS_ENUM(NSInteger, PanDirection){
 
 @property (assign, nonatomic) ZXNetWorkStatus netWorkStatus;
 /**
- *  单例，用于列表cell上多个视频
  *
  *  @return MediaPlayer
  */
