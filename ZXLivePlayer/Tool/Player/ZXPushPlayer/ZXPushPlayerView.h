@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ZXMediaPlayer.h"
 
+#define PUSH_URL_TEST @"rtmp://3891.livepush.myqcloud.com/live/3891_user_bea5056c_0a23?bizid=3891&txSecret=b44be37a13dffafeca8960a446eecfd3&txTime=5AC6E64E"
+
+
 @protocol ZXPushPlayerViewDelegate<NSObject>
 
 -(void)quitPushPlayerView;

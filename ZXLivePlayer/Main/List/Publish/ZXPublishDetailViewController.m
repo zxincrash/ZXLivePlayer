@@ -30,7 +30,7 @@
     ZXMediaPlayerModel *palyerModel = [ZXMediaPlayerModel new];
     palyerModel.fatherView = self.view;
 
-    pushPlayerView.pushUrl = @"rtmp://3891.livepush.myqcloud.com/live/3891_user_bea5056c_0a23?bizid=3891&txSecret=b44be37a13dffafeca8960a446eecfd3&txTime=5AC6E64E";
+    pushPlayerView.pushUrl = PUSH_URL_TEST;
     [pushPlayerView playerModel:palyerModel];
     [pushPlayerView startRtmp];
 }

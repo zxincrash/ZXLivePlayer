@@ -13,9 +13,6 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 
-#ifdef CUSTOM_PROCESS
-#import "CustomProcessFilter.h"
-#endif
 
 
 #pragma mark - MediaPlayerViewController

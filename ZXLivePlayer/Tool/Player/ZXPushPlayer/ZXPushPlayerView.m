@@ -119,7 +119,7 @@
 -(void)startRtmp{
     NSString *rtmpUrl = self.pushUrl;
     if (!([rtmpUrl hasPrefix:@"rtmp://"])) {
-        rtmpUrl = @"rtmp://3891.livepush.myqcloud.com/live/3891_user_bea5056c_0a23?bizid=3891&txSecret=b44be37a13dffafeca8960a446eecfd3&txTime=5AC6E64E";
+        rtmpUrl = PUSH_URL_TEST;
     }
     if (!([rtmpUrl hasPrefix:@"rtmp://"])) {
         [self toastTip:@"推流地址不合法，目前支持rtmp推流!"];
@@ -148,31 +148,15 @@
     [self.txLivePush setConfig:_config];
     
     self.txLivePush.delegate = self;
-#ifdef CUSTOM_PROCESS
-    //_txLivePublisher.videoProcessDelegate = self;
-#endif
-    
-#ifdef  UGC_ACTIVITY
-    if (!_isPreviewing) {
-        TXUGCCustomConfig *param = [[TXUGCCustomConfig alloc] init];
-        param.videoResolution = _config.videoResolution;
-        param.videoFPS = _config.videoFPS;
-        param.videoBitratePIN = _config.videoBitratePIN;
-        param.watermark = [UIImage imageNamed:@"watermark.png"];
-        param.watermarkPos = (CGPoint){10, 10};
-        [[TXUGCRecord shareInstance] startCameraCustom:param preview:preViewContainer];
-        _isPreviewing = YES;
-    }
-#else
+
     [self.txLivePush startPreview:self];
-    
     if ([self.txLivePush startPush:rtmpUrl] != 0) {
         NSLog(@"推流器启动失败");
         return;
     }
-#endif
-    ZXPushControlView *defaultControlView = [[ZXPushControlView alloc] init];
     
+    //设置控制UI
+    ZXPushControlView *defaultControlView = [[ZXPushControlView alloc] init];
     defaultControlView.frame = self.frame;
     self.controlView = defaultControlView;
 }
@@ -181,9 +165,6 @@
     self.pushUrl = @"";
     if (_txLivePush != nil) {
         [_txLivePush stopPreview];
-#ifdef  UGC_ACTIVITY
-        [[TXUGCRecord shareInstance] stopCameraPreview];
-#endif
         [_txLivePush stopPush];
     }
 }
