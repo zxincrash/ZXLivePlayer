@@ -9,7 +9,6 @@
 #import "ZXMediaPlayerView.h"
 #import <TXLiteAVSDK_Professional/TXVodPlayer.h>
 #import <TXLiteAVSDK_Professional/TXLivePlayer.h>
-#import <TXLiteAVSDK_Professional/TXLivePush.h>
 #import <AFNetworking.h>
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
@@ -18,11 +17,10 @@
 #import "CustomProcessFilter.h"
 #endif
 
-#define RTMP_PUBLISH_URL    @"请输入推流地址或者扫二维码进行输入"  //调试期间您可以修改之以避免输入地址的麻烦
 
 #pragma mark - MediaPlayerViewController
 
-@interface ZXMediaPlayerView()<TXVodPlayListener,TXLivePlayListener,TXLivePushListener,UIGestureRecognizerDelegate,DQChangeAngleViewDelegate>
+@interface ZXMediaPlayerView()<TXVodPlayListener,TXLivePlayListener,UIGestureRecognizerDelegate,DQChangeAngleViewDelegate>
 {
     float _sliderValue;
 }
@@ -40,38 +38,33 @@
 @property (nonatomic, strong) TXLivePlayConfig *txLiveConfig;
 @property (nonatomic, assign) TX_Enum_PlayType livePlayType;
 
-/** 推流实例 */
-@property (nonatomic, strong) TXLivePush *txLivePush;
-@property (nonatomic, strong) TXLivePushConfig *txLivePushConfig;
-@property (nonatomic, strong) NSString *pushUrl;
-
 @property (nonatomic, strong) ZXMediaPlayerControlView *controlView;
 @property (nonatomic, strong) ZXMediaPlayerModel *playerModel;
-@property (nonatomic, assign) NSInteger              seekTime;
-@property (nonatomic, strong) NSString                  *playUrl;
-@property (nonatomic, strong) NSDictionary           *resolutionDic;
+@property (nonatomic, assign) NSInteger seekTime;
+@property (nonatomic, strong) NSString *playUrl;
+@property (nonatomic, strong) NSDictionary *resolutionDic;
 
 
 /** 滑杆 */
-@property (nonatomic, strong) UISlider               *volumeViewSlider;
+@property (nonatomic, strong) UISlider *volumeViewSlider;
 /** slider上次的值 */
-@property (nonatomic, assign) CGFloat                sliderLastValue;
+@property (nonatomic, assign) CGFloat sliderLastValue;
 
 /** 是否正在拖拽 */
-@property (nonatomic, assign) BOOL                   isDragged;
+@property (nonatomic, assign) BOOL isDragged;
 
 /** 是否为全屏 */
-@property (nonatomic, assign) BOOL                   isFullScreen;
+@property (nonatomic, assign) BOOL isFullScreen;
 /** 是否锁定屏幕方向 */
-@property (nonatomic, assign) BOOL                   isLocked;
+@property (nonatomic, assign) BOOL isLocked;
 /** 是否在调节音量*/
-@property (nonatomic, assign) BOOL                   isVolume;
+@property (nonatomic, assign) BOOL isVolume;
 /** 是否被用户暂停 */
-@property (nonatomic, assign) BOOL                   isPauseByUser;
+@property (nonatomic, assign) BOOL isPauseByUser;
 /** 播放完了*/
-@property (nonatomic, assign) BOOL                   playDidEnd;
+@property (nonatomic, assign) BOOL playDidEnd;
 /** 进入后台*/
-@property (nonatomic, assign) BOOL                   didEnterBackground;
+@property (nonatomic, assign) BOOL didEnterBackground;
 /** 是否正在旋转屏幕 */
 @property (nonatomic, assign) BOOL isRotating;
 /** 单击 */
@@ -80,12 +73,12 @@
 @property (nonatomic, strong) UITapGestureRecognizer *doubleTap;
 
 /** 用来保存快进的总时长 */
-@property (nonatomic, assign) CGFloat                sumTime;
+@property (nonatomic, assign) CGFloat sumTime;
 /** 定义一个实例变量，保存枚举值 */
-@property (nonatomic, assign) PanDirection           panDirection;
+@property (nonatomic, assign) PanDirection panDirection;
 
 /** 亮度view */
-@property (nonatomic, strong) ZXBrightnessView       *brightnessView;
+@property (nonatomic, strong) ZXBrightnessView *brightnessView;
 
 @end
 
@@ -207,12 +200,6 @@
     return _txLivePlayer;
 }
 
--(TXLivePush*)txLivePush{
-    if (_txLivePush == nil) {
-        _txLivePush = [[TXLivePush alloc]init];
-    }
-    return _txLivePush;
-}
 
 - (void)dealloc {
     MediaPlayerShared.isLockScreen = NO;
@@ -334,8 +321,8 @@
  *  @param sender UIButton
  */
 - (void)lockScreenAction:(UIButton *)sender {
-    sender.selected             = !sender.selected;
-    self.isLocked               = sender.selected;
+    sender.selected = !sender.selected;
+    self.isLocked = sender.selected;
     // 调用AppDelegate单例记录播放状态是否锁屏，在TabBarController设置哪些页面支持旋转
     MediaPlayerShared.isLockScreen = sender.selected;
 }
@@ -434,65 +421,6 @@
     return YES;
 }
 
--(BOOL)startLivePush{
-    NSString *rtmpUrl = self.pushUrl;
-    if (!([rtmpUrl hasPrefix:@"rtmp://"])) {
-        rtmpUrl = @"";
-    }
-    if (!([rtmpUrl hasPrefix:@"rtmp://"])) {
-        [self toastTip:@"推流地址不合法，目前支持rtmp推流!"];
-        return NO;
-    }
-    
-    //是否有摄像头权限
-    AVAuthorizationStatus statusVideo = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
-    if (statusVideo == AVAuthorizationStatusDenied) {
-        [self toastTip:@"获取摄像头权限失败，请前往隐私-相机设置里面打开应用权限"];
-        return NO;
-    }
-    
-    //是否有麦克风权限
-    AVAuthorizationStatus statusAudio = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio];
-    if (statusAudio == AVAuthorizationStatusDenied) {
-        [self toastTip:@"获取麦克风权限失败，请前往隐私-麦克风设置里面打开应用权限"];
-        return NO;
-    }
-    
-        TXLivePushConfig *_config = self.txLivePush.config;
-
-        _config.pauseFps = 10;
-        _config.pauseTime = 300;
-        _config.pauseImg = [UIImage imageNamed:@"pause_publish.jpg"];
-        [self.txLivePush setConfig:_config];
-        
-        self.txLivePush.delegate = self;
-#ifdef CUSTOM_PROCESS
-        //_txLivePublisher.videoProcessDelegate = self;
-#endif
-        
-#ifdef  UGC_ACTIVITY
-        if (!_isPreviewing) {
-            TXUGCCustomConfig *param = [[TXUGCCustomConfig alloc] init];
-            param.videoResolution = _config.videoResolution;
-            param.videoFPS = _config.videoFPS;
-            param.videoBitratePIN = _config.videoBitratePIN;
-            param.watermark = [UIImage imageNamed:@"watermark.png"];
-            param.watermarkPos = (CGPoint){10, 10};
-            [[TXUGCRecord shareInstance] startCameraCustom:param preview:preViewContainer];
-            _isPreviewing = YES;
-        }
-#else
-            [self.txLivePush startPreview:self];
-    
-        if ([self.txLivePush startPush:rtmpUrl] != 0) {
-            NSLog(@"推流器启动失败");
-            return NO;
-        }
-#endif
-
-    return YES;
-}
-
 -(void)configControlView{
     self.state = MediaPlayerStatePlaying;
     
@@ -523,16 +451,6 @@
                 _txLivePlayer.delegate = nil;
             }
             break;
-        case MediaPlayerType_PUSH:
-            self.pushUrl = @"";
-            if (_txLivePush != nil) {
-                _txLivePush.delegate = nil;
-                [_txLivePush stopPreview];
-#ifdef  UGC_ACTIVITY
-                [[TXUGCRecord shareInstance] stopCameraPreview];
-#endif
-                [_txLivePush stopPush];
-            }
         default:
             break;
     }
@@ -639,8 +557,6 @@
 
     [self.controlView mediaPlayerResetControlView];
     
-    // 非重播时，移除当前playerView
-    
 }
 
 //恢复后台第三方播放
@@ -664,16 +580,16 @@
 - (void)createGesture {
     // 单击
     self.singleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(singleTapAction:)];
-    self.singleTap.delegate                = self;
+    self.singleTap.delegate = self;
     self.singleTap.numberOfTouchesRequired = 1; //手指数
     self.singleTap.numberOfTapsRequired    = 1;
     [self addGestureRecognizer:self.singleTap];
     
     // 双击(播放/暂停)
     self.doubleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doubleTapAction:)];
-    self.doubleTap.delegate                = self;
+    self.doubleTap.delegate = self;
     self.doubleTap.numberOfTouchesRequired = 1; //手指数
-    self.doubleTap.numberOfTapsRequired    = 2;
+    self.doubleTap.numberOfTapsRequired = 2;
     
     [self addGestureRecognizer:self.doubleTap];
     
@@ -685,9 +601,7 @@
 }
 
 #pragma -mark 前后台切换
-/**
- *  应用退到后台
- */
+/** 应用退到后台 */
 - (void)appDidEnterBackground {
     self.didEnterBackground     = YES;
     // 退到后台锁定屏幕方向
@@ -703,9 +617,7 @@
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
 }
 
-/**
- *  应用进入前台
- */
+/** 应用进入前台 */
 - (void)appDidEnterPlayground {
     self.didEnterBackground     = NO;
     // 根据是否锁定屏幕方向 来恢复单例里锁定屏幕的方向
