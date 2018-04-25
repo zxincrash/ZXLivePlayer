@@ -75,6 +75,32 @@
     }
 }
 
+#pragma -mark 前后台切换
+/** 应用退到后台 */
+- (void)appDidEnterBackground {
+    [[UIApplication sharedApplication]beginBackgroundTaskWithExpirationHandler:^{
+        
+    }];
+    [self.txLivePush pausePush];
+}
+
+/** 应用进入前台 */
+- (void)appDidEnterPlayground {
+    [self.txLivePush resumePush];
+}
+
+
+/**
+ *  添加观察者、通知
+ */
+- (void)addNotifications {
+    // app退到后台
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidEnterBackground) name:UIApplicationWillResignActiveNotification object:nil];
+    // app进入前台
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidEnterPlayground) name:UIApplicationDidBecomeActiveNotification object:nil];
+    
+}
+
 #pragma -mark - 提示框
 /**
  @method 获取指定宽度width的字符串在UITextView上的高度
@@ -159,6 +185,9 @@
     ZXPushControlView *defaultControlView = [[ZXPushControlView alloc] init];
     defaultControlView.frame = self.frame;
     self.controlView = defaultControlView;
+    
+    //注册通知（前后台切换）
+    [self addNotifications];
 }
 
 -(void)stopRtmp{

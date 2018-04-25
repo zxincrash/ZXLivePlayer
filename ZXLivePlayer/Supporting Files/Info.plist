@@ -25,6 +25,20 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>请允许视频云使用您的媒体库</string>
+	<key>NSCameraUsageDescription</key>
+	<string>是否允许此App使用你的相机？</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>请选择YES</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>是否允许此App使用你的相册？</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>请允许使用相册</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -42,16 +56,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>是否允许此App使用你的相机？</string>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>请允许视频云使用您的媒体库</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>请选择YES</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>是否允许此App使用你的相册？</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>请允许使用相册</string>
 	<key>com.tencent.rdm.uuid</key>
 	<string>4e95a733-fdb4-4f45-b3f7-1bc3787bb0a6</string>
 </dict>

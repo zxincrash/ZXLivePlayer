@@ -648,6 +648,11 @@
 					DC863CA42064D0CA00170E27 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					DC863CBC2064D0CB00170E27 = {
 						CreatedOnToolsVersion = 9.2;

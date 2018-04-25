@@ -21,69 +21,67 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 @interface ZXMediaPlayerControlView () <UIGestureRecognizerDelegate>
 
 /** 标题 */
-@property (nonatomic, strong) UILabel                 *titleLabel;
+@property (nonatomic, strong) UILabel *titleLabel;
 /** 开始播放按钮 */
-@property (nonatomic, strong) UIButton                *startBtn;
+@property (nonatomic, strong) UIButton *startBtn;
 /** 当前播放时长label */
-@property (nonatomic, strong) UILabel                 *currentTimeLabel;
+@property (nonatomic, strong) UILabel *currentTimeLabel;
 /** 视频总时长label */
-@property (nonatomic, strong) UILabel                 *totalTimeLabel;
+@property (nonatomic, strong) UILabel *totalTimeLabel;
 /** 缓冲进度条 */
-@property (nonatomic, strong) UIProgressView          *progressView;
+@property (nonatomic, strong) UIProgressView *progressView;
 /** 滑杆 */
-@property (nonatomic, strong) ASValueTrackingSlider   *videoSlider;
+@property (nonatomic, strong) ASValueTrackingSlider *videoSlider;
 /** 全屏按钮 */
-@property (nonatomic, strong) UIButton                *fullScreenBtn;
+@property (nonatomic, strong) UIButton *fullScreenBtn;
 /** 锁定屏幕方向按钮 */
-@property (nonatomic, strong) UIButton                *lockBtn;
+@property (nonatomic, strong) UIButton *lockBtn;
 /** 系统菊花 */
 @property (nonatomic, strong) ZXMediaPlayerLoadingView *activity;
 /** 返回按钮*/
-@property (nonatomic, strong) UIButton                *backBtn;
+@property (nonatomic, strong) UIButton *backBtn;
 /** 关闭按钮*/
-@property (nonatomic, strong) UIButton                *closeBtn;
+@property (nonatomic, strong) UIButton *closeBtn;
 /** 重播按钮 */
-@property (nonatomic, strong) UIButton                *repeatBtn;
+@property (nonatomic, strong) UIButton *repeatBtn;
 /** bottomView*/
-@property (nonatomic, strong) UIImageView             *bottomImageView;
+@property (nonatomic, strong) UIImageView *bottomImageView;
 /** topView */
-@property (nonatomic, strong) UIImageView             *topImageView;
+@property (nonatomic, strong) UIImageView *topImageView;
 /** 切换分辨率按钮 */
-@property (nonatomic, strong) UIButton                *resolutionBtn;
+@property (nonatomic, strong) UIButton *resolutionBtn;
 /** 分辨率的View */
-@property (nonatomic, strong) UIView                  *resolutionView;
+@property (nonatomic, strong) UIView *resolutionView;
 /** 播放按钮 */
-@property (nonatomic, strong) UIButton                *playBtn;
+@property (nonatomic, strong) UIButton *playBtn;
 /** 加载失败按钮 */
-@property (nonatomic, strong) UIButton                *failBtn;
+@property (nonatomic, strong) UIButton *failBtn;
 /** 快进快退View*/
-@property (nonatomic, strong) UIView                  *fastView;
+@property (nonatomic, strong) UIView *fastView;
 /** 快进快退进度progress*/
-@property (nonatomic, strong) UIProgressView          *fastProgressView;
+@property (nonatomic, strong) UIProgressView *fastProgressView;
 /** 快进快退时间*/
-@property (nonatomic, strong) UILabel                 *fastTimeLabel;
+@property (nonatomic, strong) UILabel *fastTimeLabel;
 /** 快进快退ImageView*/
-@property (nonatomic, strong) UIImageView             *fastImageView;
+@property (nonatomic, strong) UIImageView *fastImageView;
 /** 当前选中的分辨率btn按钮 */
-@property (nonatomic, weak  ) UIButton                *resoultionCurrentBtn;
+@property (nonatomic, weak  ) UIButton *resoultionCurrentBtn;
 /** 占位图 */
-@property (nonatomic, strong) UIImageView             *placeholderImageView;
+@property (nonatomic, strong) UIImageView *placeholderImageView;
 /** 控制层消失时候在底部显示的播放进度progress */
-@property (nonatomic, strong) UIProgressView          *bottomProgressView;
+@property (nonatomic, strong) UIProgressView *bottomProgressView;
 
 /** 切换视角 */
 @property (strong, nonatomic) UIButton *changeAngleBtn;
 
 #pragma mark - 其他
 /** 分辨率的名称 */
-@property (nonatomic, strong) NSArray                 *resolutionArray;
+@property (nonatomic, strong) NSArray *resolutionArray;
 
 /** 显示控制层 */
 @property (nonatomic, assign, getter=isShowing) BOOL  showing;
 /** 小屏播放 */
 @property (nonatomic, assign, getter=isShrink ) BOOL  shrink;
-/** 在cell上播放 */
-@property (nonatomic, assign, getter=isCellVideo)BOOL cellVideo;
 /** 是否拖拽slider控制播放进度 */
 @property (nonatomic, assign, getter=isDragged) BOOL  dragged;
 /** 是否播放结束 */
@@ -384,7 +382,7 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     // 状态条的方向旋转的方向,来判断当前屏幕的方向
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     // 在cell上并且是竖屏时候响应关闭事件
-    if (self.isCellVideo && orientation == UIInterfaceOrientationPortrait) {
+    if (orientation == UIInterfaceOrientationPortrait) {
         if ([self.delegate respondsToSelector:@selector(playerControlView:closeAction:)]) {
             [self.delegate playerControlView:self closeAction:sender];
         }
@@ -546,11 +544,8 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 }
 
 - (void)setOrientationLandscapeConstraint {
-    if (self.isCellVideo) {
-        self.shrink             = NO;
-    }
-    self.fullScreen             = YES;
-    self.lockBtn.hidden         = !self.isFullScreen;
+    self.fullScreen = YES;
+    self.lockBtn.hidden = !self.isFullScreen;
 
     self.fullScreenBtn.selected = self.isFullScreen;
     [self.backBtn setImage:MediaPlayerImage(@"MediaPlayer_back_full") forState:UIControlStateNormal];
@@ -572,8 +567,8 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
  *  设置竖屏的约束
  */
 - (void)setOrientationPortraitConstraint {
-    self.fullScreen             = NO;
-    self.lockBtn.hidden         = !self.isFullScreen;
+    self.fullScreen = NO;
+    self.lockBtn.hidden = !self.isFullScreen;
 
     self.fullScreenBtn.selected = self.isFullScreen;
     [self layoutIfNeeded];
@@ -589,24 +584,21 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
         make.width.height.mas_equalTo(45);
     }];
     
-    if (self.isCellVideo) {
-        [self.backBtn setImage:MediaPlayerImage(@"MediaPlayer_close") forState:UIControlStateNormal];
-    }
 }
 
 #pragma mark - Private Method
 - (void)showControlView {
     if (self.lockBtn.isSelected) {
-        self.topImageView.alpha    = 0;
+        self.topImageView.alpha = 0;
         self.bottomImageView.alpha = 0;
         self.playBtn.alpha = 0;
     } else {
-        self.topImageView.alpha    = 1;
+        self.topImageView.alpha = 1;
         self.bottomImageView.alpha = 1;
         self.playBtn.alpha = 1;
     }
-    self.backgroundColor           = RGBA(0, 0, 0, 0.3);
-    self.lockBtn.alpha             = 1;
+    self.backgroundColor = RGBA(0, 0, 0, 0.3);
+    self.lockBtn.alpha = 1;
     self.bottomProgressView.alpha  = 0;
     if (self.isFullScreen) {
         MediaPlayerShared.isStatusBarHidden = NO;
@@ -633,11 +625,11 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 }
 
 - (void)hideControlView {
-    self.backgroundColor          = RGBA(0, 0, 0, 0);
-    self.topImageView.alpha       = self.playeEnd;
-    self.bottomImageView.alpha    = 0;
+    self.backgroundColor = RGBA(0, 0, 0, 0);
+    self.topImageView.alpha = self.playeEnd;
+    self.bottomImageView.alpha = 0;
     self.playBtn.alpha = 0;
-    self.lockBtn.alpha            = 0;
+    self.lockBtn.alpha = 0;
     self.bottomProgressView.alpha = 1;
     // 隐藏resolutionView
     self.resolutionBtn.selected = YES;
@@ -754,9 +746,9 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 
 - (UILabel *)currentTimeLabel {
     if (!_currentTimeLabel) {
-        _currentTimeLabel               = [[UILabel alloc] init];
-        _currentTimeLabel.textColor     = [UIColor whiteColor];
-        _currentTimeLabel.font          = [UIFont systemFontOfSize:12.0f];
+        _currentTimeLabel = [[UILabel alloc] init];
+        _currentTimeLabel.textColor = [UIColor whiteColor];
+        _currentTimeLabel.font = [UIFont systemFontOfSize:12.0f];
         _currentTimeLabel.textAlignment = NSTextAlignmentCenter;
     }
     return _currentTimeLabel;
@@ -980,7 +972,7 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 - (void)mediaPlayerResetControlViewForResolution {
     self.fastView.hidden = YES;
     self.repeatBtn.hidden = YES;
-    self.resolutionView.hidden  = YES;
+    self.resolutionView.hidden = YES;
 
     self.failBtn.hidden = YES;
     self.backgroundColor = [UIColor clearColor];
@@ -1054,8 +1046,7 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 
 /** 在cell播放 */
 - (void)mediaPlayerCellPlay {
-    self.cellVideo = YES;
-    self.shrink    = YES;
+    self.shrink = YES;
     [self.backBtn setImage:MediaPlayerImage(@"MediaPlayer_close") forState:UIControlStateNormal];
     [self layoutIfNeeded];
     [self mediaPlayerShowControlView];
