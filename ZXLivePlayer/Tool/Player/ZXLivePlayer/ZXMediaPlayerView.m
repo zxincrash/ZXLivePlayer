@@ -15,6 +15,7 @@
 
 
 
+
 #pragma mark - MediaPlayerViewController
 
 @interface ZXMediaPlayerView()<TXVodPlayListener,TXLivePlayListener,UIGestureRecognizerDelegate,DQChangeAngleViewDelegate>

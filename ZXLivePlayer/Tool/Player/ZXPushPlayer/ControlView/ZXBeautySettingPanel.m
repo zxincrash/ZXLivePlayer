@@ -266,7 +266,7 @@
             self.selectGreenIndexPath = indexPath;
             
             [self onSetGreenWithIndex:indexPath.row];
-            //
+
         }
     }
     else if(collectionView == _functionCollectionView){

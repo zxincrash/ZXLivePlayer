@@ -116,7 +116,7 @@
 }
 
 #pragma -mark - 开始推流
--(void)startRtmp{
+-(void)startPublish{
     NSString *rtmpUrl = self.pushUrl;
     if (!([rtmpUrl hasPrefix:@"rtmp://"])) {
         rtmpUrl = PUSH_URL_TEST;
@@ -200,7 +200,7 @@
 
 -(void)publishAction:(BOOL)isPublish{
     if (isPublish) {
-        [self startRtmp];
+        [self startPublish];
         [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
 
     }else{
@@ -282,7 +282,7 @@
     dispatch_async(dispatch_get_main_queue(), ^{
 
         if (EvtID == PUSH_ERR_NET_DISCONNECT) {
-            [self startRtmp];
+            [self startPublish];
         } else if (EvtID == PUSH_WARNING_HW_ACCELERATION_FAIL) {
             self.txLivePush.config.enableHWAcceleration = false;
 

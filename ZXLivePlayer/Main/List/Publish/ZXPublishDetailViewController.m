@@ -21,8 +21,6 @@
     self.pf_prefersNavigationBarHidden = YES;
     self.pf_recognizeSimultaneouslyEnable = NO;
     
-//    [self addLeftBarButtonItemWithType:ZXNavigationBarType_BACK];
-//    self.view.backgroundColor = HEX_RGB(COLOR_BACKGROUND);
     
     ZXPushPlayerView *pushPlayerView = [ZXPushPlayerView shared];
     pushPlayerView.delegate = self;
@@ -32,7 +30,7 @@
 
     pushPlayerView.pushUrl = PUSH_URL_TEST;
     [pushPlayerView playerModel:palyerModel];
-    [pushPlayerView startRtmp];
+    [pushPlayerView startPublish];
 }
 
 -(void)onPopViewControllerAnimated:(BOOL)animated{

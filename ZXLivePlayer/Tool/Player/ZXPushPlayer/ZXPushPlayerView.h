@@ -28,7 +28,7 @@
 /** 设置播放模型数据 */
 - (void)playerModel:(ZXMediaPlayerModel *)playerModel;
 /** 开始推流 */
--(void)startRtmp;
+-(void)startPublish;
 /** 结束推流 */
 -(void)clearPublish;
 
