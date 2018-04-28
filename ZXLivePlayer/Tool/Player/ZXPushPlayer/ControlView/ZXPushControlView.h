@@ -16,7 +16,8 @@
 -(void)switchCamera:(BOOL)isSwitch;
 /** 横竖屏推流设置 */
 -(void)directionAction:(BOOL)direction;
-
+/** 设置按钮 */
+-(void)settingAction:(BOOL)selected;
 
 //美颜配置代理方法
 - (void)onSetBeautyStyle:(int)beautyStyle beautyLevel:(float)beautyLevel whitenessLevel:(float)whitenessLevel ruddinessLevel:(float)ruddinessLevel;
@@ -36,5 +37,7 @@
 
 @interface ZXPushControlView : UIView
 @property (nonatomic, weak) id<ZXPushControlViewDelegate> delegate;
+
+-(void)setPublishButtonState:(BOOL)selected;
 
 @end

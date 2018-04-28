@@ -19,7 +19,7 @@
 @property (strong, nonatomic) UIButton *beautyButton;//美颜按钮
 @property (strong, nonatomic) ZXBeautySettingPanel *beautySettingPanel;//美颜设置界面
 
-@property (strong, nonatomic) UIButton *pushButton;
+@property (strong, nonatomic) UIButton *publishButton;
 @property (strong, nonatomic) UIButton *directionButton;//推流方向
 @property (strong, nonatomic) UIButton *settingButton;//设置
 
@@ -35,7 +35,7 @@
         [self addSubview:self.beautyButton];
         [self addSubview:self.beautySettingPanel];
 
-        [self addSubview:self.pushButton];
+        [self addSubview:self.publishButton];
         [self addSubview:self.titleLab];
         [self addSubview:self.directionButton];
         [self addSubview:self.settingButton];
@@ -61,20 +61,20 @@
         make.height.mas_equalTo(buttonWH);
     }];
     
-    [self.pushButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.publishButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self).offset(10);
         make.bottom.equalTo(self).offset(-10);
         make.width.height.mas_equalTo(buttonWH);
     }];
     
     [self.cameraButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.pushButton);
-        make.leading.equalTo(self.pushButton.mas_trailing).offset(5);
+        make.bottom.equalTo(self.publishButton);
+        make.leading.equalTo(self.publishButton.mas_trailing).offset(5);
         make.width.height.mas_equalTo(buttonWH);
     }];
     
     [self.beautyButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.pushButton);
+        make.bottom.equalTo(self.publishButton);
         make.leading.equalTo(self.cameraButton.mas_trailing).offset(5);
         make.width.height.mas_equalTo(buttonWH);
     }];
@@ -82,26 +82,30 @@
     NSUInteger controlHeight = [ZXBeautySettingPanel getHeight];
     [self.beautySettingPanel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self);
-        make.bottom.equalTo(self.pushButton.mas_top).offset(-3);
+        make.bottom.equalTo(self.publishButton.mas_top).offset(-3);
         make.width.mas_equalTo(kMediaPlayerScreenWidth);
         make.height.mas_equalTo(controlHeight);
     }];
     
     [self.directionButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.pushButton);
+        make.bottom.equalTo(self.publishButton);
         make.leading.equalTo(self.beautyButton.mas_trailing).offset(5);
         make.width.height.mas_equalTo(buttonWH);
     }];
     
     [self.settingButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.pushButton);
+        make.bottom.equalTo(self.publishButton);
         make.leading.equalTo(self.directionButton.mas_trailing).offset(5);
         make.width.height.mas_equalTo(buttonWH);
     }];
 }
 
--(void)setPushButtonState:(BOOL)selected{
-    
+-(void)setPublishButtonState:(BOOL)selected{
+    if (selected) {
+        [self.publishButton setImage:[UIImage imageNamed:@"MediaPlayer_pause"] forState:UIControlStateSelected];
+    }else{
+        [self.publishButton setImage:[UIImage imageNamed:@"MediaPlayer_play"] forState:UIControlStateNormal];
+    }
 }
 
 #pragma -mark - 控件点击事件
@@ -111,7 +115,7 @@
     }
 }
 
--(void)clickPushButton:(UIButton*)button{
+-(void)clickPublishButton:(UIButton*)button{
     if ([self.delegate respondsToSelector:@selector(publishAction:)]) {
 
         [self.delegate publishAction:button.selected];
@@ -141,6 +145,10 @@
         
         button.selected = !button.selected;
     }
+}
+
+-(void)clickSettingButton:(UIButton*)button{
+    button.selected = !button.selected;
 }
 
 #pragma -mark - BeautySettingPanelDelegate
@@ -231,14 +239,14 @@
     }
     return _cameraButton;
 }
--(UIButton*)pushButton{
-    if (_pushButton == nil) {
-        _pushButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_pushButton setImage:MediaPlayerImage(@"MediaPlayer_play") forState:UIControlStateNormal];
-        [_pushButton setImage:MediaPlayerImage(@"MediaPlayer_pause") forState:UIControlStateSelected];
-        [_pushButton addTarget:self action:@selector(clickPushButton:) forControlEvents:UIControlEventTouchUpInside];
+-(UIButton*)publishButton{
+    if (_publishButton == nil) {
+        _publishButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_publishButton setImage:MediaPlayerImage(@"MediaPlayer_play") forState:UIControlStateNormal];
+        [_publishButton setImage:MediaPlayerImage(@"MediaPlayer_pause") forState:UIControlStateSelected];
+        [_publishButton addTarget:self action:@selector(clickPublishButton:) forControlEvents:UIControlEventTouchUpInside];
     }
-    return _pushButton;
+    return _publishButton;
 }
 
 -(UILabel*)titleLab{
@@ -285,15 +293,9 @@
     if (_settingButton == nil) {
         _settingButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_settingButton setImage:[UIImage imageNamed:@"set"] forState:UIControlStateNormal];
+        [_settingButton addTarget:self action:@selector(clickSettingButton:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _settingButton;
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end

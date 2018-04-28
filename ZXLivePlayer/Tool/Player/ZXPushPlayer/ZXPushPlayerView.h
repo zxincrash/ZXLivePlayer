@@ -21,8 +21,8 @@
 
 @interface ZXPushPlayerView : UIView
 @property (weak, nonatomic) id<ZXPushPlayerViewDelegate> delegate;
-@property (nonatomic, strong) NSString *pushUrl;
-@property (nonatomic, weak) UIViewController *rootViewController;
+@property (copy, nonatomic) NSString *pushUrl;
+@property (weak, nonatomic) UIViewController *rootViewController;
 
 + (instancetype)shared;
 /** 设置播放模型数据 */
