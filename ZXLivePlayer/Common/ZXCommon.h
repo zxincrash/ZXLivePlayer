@@ -40,22 +40,11 @@
 
 static const CGFloat STATUSBAR_HEIGHT   = 20.0;
 
-static const CGFloat NAVBAR_HEIGHT   = 64.0;
-static const CGFloat TABBAR_HEIGHT   = 49.0;
-static const CGFloat PAGEVIEW_HEADER_HEIGHT_0 = 0;
-static const CGFloat PAGEVIEW_HEADER_HEIGHT_44 = 44;
-
-//token失效
-#define TOKEN_INVALID_3 3
-#define TOKEN_MSG_TOST @"登录过期，请重新登录"
-
 #define WS(weakSelf) __weak __typeof(&*self)weakSelf = self;
 
 #define kScreenWidth YYScreenSize().width
 
 #define kScreenHeight YYScreenSize().height
-
-#define TOAST_DEFAULT_BOTTOM  65
 
 #define RATIO kScreenWidth/375
 

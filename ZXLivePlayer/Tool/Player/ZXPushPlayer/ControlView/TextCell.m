@@ -14,7 +14,11 @@
 {
     self = [super initWithFrame:frame];
     if(self){
-        [self setupView];
+        self.layer.borderColor = [UIColor whiteColor].CGColor;
+        self.label = [[UILabel alloc] initWithFrame:self.bounds];
+        self.label.textColor = [UIColor whiteColor];
+        self.label.textAlignment = NSTextAlignmentCenter;
+        [self addSubview:self.label];
     }
     return self;
 }
@@ -34,14 +38,6 @@
     }
 }
 
-- (void)setupView
-{
-    self.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.label = [[UILabel alloc] initWithFrame:self.bounds];
-    self.label.textColor = [UIColor whiteColor];
-    self.label.textAlignment = NSTextAlignmentCenter;
-    [self addSubview:self.label];
-}
 
 
 @end

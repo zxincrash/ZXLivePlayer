@@ -149,6 +149,10 @@
 
 -(void)clickSettingButton:(UIButton*)button{
     button.selected = !button.selected;
+    
+    if ([self.delegate respondsToSelector:@selector(settingAction:)]) {
+        [self.delegate settingAction:button.selected];
+    }
 }
 
 #pragma -mark - BeautySettingPanelDelegate
@@ -252,7 +256,7 @@
 -(UILabel*)titleLab{
     if (_titleLab == nil) {
         _titleLab = [UILabel new];
-        _titleLab.text = @"测试";
+        _titleLab.text = @"测试标题";
         _titleLab.textColor = [UIColor blackColor];
         _titleLab.font = [UIFont systemFontOfSize:15];
     }
