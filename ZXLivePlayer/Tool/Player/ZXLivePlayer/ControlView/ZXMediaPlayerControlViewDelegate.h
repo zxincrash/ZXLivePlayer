@@ -33,8 +33,6 @@
 - (void)playerControlView:(UIView *)controlView failAction:(UIButton *)sender;
 /** 更多按钮(如右上角的分享按钮)事件 */
 - (void)playerControlView:(UIView *)controlView moreAction:(UIButton *)sender;
-/** 切换分辨率按钮事件 */
-- (void)playerControlView:(UIView *)controlView resolutionAction:(UIButton *)sender;
 /** slider的点击事件（点击slider控制进度） */
 - (void)playerControlView:(UIView *)controlView progressSliderTap:(CGFloat)value;
 /** 开始触摸slider */

@@ -130,10 +130,6 @@
     
     [self.controlView playerModel:playerModel];
     
-    if (playerModel.resolutionDic) {
-        self.resolutionDic = playerModel.resolutionDic;
-    }
-    
     [self addPlayerToFatherView:playerModel.fatherView];
     self.playUrl = playerModel.playUrl;
 }
@@ -356,9 +352,6 @@
             if ([playUrl containsString:@"txSecret="]) {
                 self.livePlayType = PLAY_TYPE_LIVE_RTMP_ACC;
             }
-//            else if (self.isRealtime) {
-//                [self toastTip:@"播放地址非合法的低延时播放地址!"];
-//            }
         } else if (([playUrl hasPrefix:@"https:"] || [playUrl hasPrefix:@"http:"]) && [playUrl rangeOfString:@".flv"].length > 0) {
             self.livePlayType = PLAY_TYPE_LIVE_FLV;
         } else{
@@ -893,7 +886,7 @@
                         // 结束滑动
                         [self.controlView mediaPlayerDraggedEnded];
                         
-                        // 把sumTime滞空，不然会越加越多
+                        // 把sumTime置空，不然会越加越多
                         self.sumTime = 0;
 
                     }
@@ -934,13 +927,24 @@
     
     // 需要限定sumTime的范围
     float totalTime = self.txVodPlayer.duration;
-    if (self.sumTime > totalTime) { self.sumTime = totalTime;}
-    if (self.sumTime < 0) { self.sumTime = 0; }
+    if (self.sumTime > totalTime) {
+        self.sumTime = totalTime;
+    }
+    
+    if (self.sumTime < 0) {
+        self.sumTime = 0;
+    }
     
     BOOL style = false;
-    if (value > 0) { style = YES; }
-    if (value < 0) { style = NO; }
-    if (value == 0) { return; }
+    if (value > 0) {
+        style = YES;
+    }
+    if (value < 0) {
+        style = NO;
+    }
+    if (value == 0) {
+        return;
+    }
     
     self.isDragged = YES;
     [self.controlView mediaPlayerDraggedTime:self.sumTime totalTime:totalTime isForward:style hasPreview:NO];
@@ -955,11 +959,7 @@
             return NO;
         }
     }
-//    if ([gestureRecognizer isKindOfClass:[UITapGestureRecognizer class]]) {
-//        if (!self.isFullScreen) {
-//            return NO;
-//        }
-//    }
+    
     if ([touch.view isKindOfClass:[UISlider class]]) {
         return NO;
     }
@@ -1121,22 +1121,6 @@
 /** 加载失败按钮事件 */
 - (void)playerControlView:(ZXMediaPlayerControlView *)controlView failAction:(UIButton *)sender {
     [self playTheVideo];
-}
-
-- (void)playerControlView:(ZXMediaPlayerControlView *)controlView resolutionAction:(UIButton *)sender {
-//    // 记录切换分辨率的时刻
-//    NSInteger currentTime = (NSInteger)CMTimeGetSeconds([self.player currentTime]);
-//    NSString *videoStr = self.videoURLArray[sender.tag - 200];
-//    NSURL *videoURL = [NSURL URLWithString:videoStr];
-//    if ([videoURL isEqual:self.videoURL]) { return; }
-//    self.isChangeResolution = YES;
-//    // reset player
-//    [self resetToPlayNewURL];
-//    self.videoURL = videoURL;
-//    // 从xx秒播放
-//    self.seekTime = currentTime;
-//    // 切换完分辨率自动播放
-//    [self playTheVideo];
 }
 
 - (void)playerControlView:(ZXMediaPlayerControlView *)controlView moreAction:(UIButton *)sender {

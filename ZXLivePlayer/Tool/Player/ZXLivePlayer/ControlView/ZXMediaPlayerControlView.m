@@ -333,31 +333,6 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 }
 
 #pragma mark - Action
-
-/**
- *  点击切换分别率按钮
- */
-- (void)changeResolution:(UIButton *)sender {
-    sender.selected = YES;
-    if (sender.isSelected) {
-        sender.backgroundColor = RGBA(86, 143, 232, 1);
-    } else {
-        sender.backgroundColor = [UIColor clearColor];
-    }
-    self.resoultionCurrentBtn.selected = NO;
-    self.resoultionCurrentBtn.backgroundColor = [UIColor clearColor];
-    self.resoultionCurrentBtn = sender;
-    // 隐藏分辨率View
-    self.resolutionView.hidden  = YES;
-    // 分辨率Btn改为normal状态
-    self.resolutionBtn.selected = NO;
-    // topImageView上的按钮的文字
-    [self.resolutionBtn setTitle:sender.titleLabel.text forState:UIControlStateNormal];
-    if ([self.delegate respondsToSelector:@selector(playerControlView:resolutionAction:)]) {
-        [self.delegate playerControlView:self resolutionAction:sender];
-    }
-}
-
 /**
  *  UISlider TapAction
  */
@@ -1000,9 +975,7 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     } else {
         self.placeholderImageView.image = playerModel.placeholderImage;
     }
-    if (playerModel.resolutionDic) {
-        [self mediaPlayerResolutionArray:[playerModel.resolutionDic allKeys]];
-    }
+
 }
 
 /** 正在播放（隐藏placeholderImageView） */
@@ -1202,46 +1175,6 @@ static const CGFloat MediaPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     MediaPlayerShared.isStatusBarHidden = NO;
     self.bottomProgressView.alpha = 0;
     
-}
-
-/**
- 是否有切换分辨率功能
- */
-- (void)mediaPlayerResolutionArray:(NSArray *)resolutionArray {
-    self.resolutionBtn.hidden = NO;
-    
-    _resolutionArray = resolutionArray;
-    [_resolutionBtn setTitle:resolutionArray.firstObject forState:UIControlStateNormal];
-    // 添加分辨率按钮和分辨率下拉列表
-    self.resolutionView = [[UIView alloc] init];
-    self.resolutionView.hidden = YES;
-    self.resolutionView.backgroundColor = RGBA(0, 0, 0, 0.7);
-    [self addSubview:self.resolutionView];
-    
-    [self.resolutionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(40);
-        make.height.mas_equalTo(25*resolutionArray.count);
-        make.leading.equalTo(self.resolutionBtn.mas_leading).offset(0);
-        make.top.equalTo(self.resolutionBtn.mas_bottom).offset(0);
-    }];
-    
-    // 分辨率View上边的Btn
-    for (NSInteger i = 0 ; i < resolutionArray.count; i++) {
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.layer.borderColor = [UIColor whiteColor].CGColor;
-        btn.layer.borderWidth = 0.5;
-        btn.tag = 200+i;
-        btn.frame = CGRectMake(0, 25*i, 40, 25);
-        btn.titleLabel.font = [UIFont systemFontOfSize:12];
-        [btn setTitle:resolutionArray[i] forState:UIControlStateNormal];
-        if (i == 0) {
-            self.resoultionCurrentBtn = btn;
-            btn.selected = YES;
-            btn.backgroundColor = RGBA(86, 143, 232, 1);
-        }
-        [self.resolutionView addSubview:btn];
-        [btn addTarget:self action:@selector(changeResolution:) forControlEvents:UIControlEventTouchUpInside];
-    }
 }
 
 /** 播放按钮状态 */

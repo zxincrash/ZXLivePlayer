@@ -259,8 +259,7 @@
 		DC452FF5206CD6BE00A83680 /* ZXPushPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				DC452FF6206CD6DA00A83680 /* ZXPushPlayerView.h */,
-				DC452FF7206CD6DA00A83680 /* ZXPushPlayerView.m */,
+				DC7EED6420A2D4D8002F4622 /* PlayerView */,
 				DC452FF9206CD75500A83680 /* ControlView */,
 			);
 			path = ZXPushPlayer;
@@ -293,8 +292,8 @@
 		DC452FFE206CD7CF00A83680 /* Public */ = {
 			isa = PBXGroup;
 			children = (
-				DC863CFB2064D48B00170E27 /* ZXMediaPlayer.h */,
 				DC863D002064D48B00170E27 /* Extension */,
+				DC863CFB2064D48B00170E27 /* ZXMediaPlayer.h */,
 				DC863D092064D48B00170E27 /* MMMaterialDesignSpinner.h */,
 				DC863D0A2064D48B00170E27 /* MMMaterialDesignSpinner.m */,
 				DC863CF92064D48B00170E27 /* ZXBrightnessView.h */,
@@ -305,6 +304,24 @@
 				DC863D0C2064D48B00170E27 /* UINavigationController+FullscreenPopGesture.m */,
 			);
 			path = Public;
+			sourceTree = "<group>";
+		};
+		DC7EED6320A2D4BB002F4622 /* PlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				DC863D0F2064D48B00170E27 /* ZXMediaPlayerView.h */,
+				DC863D102064D48B00170E27 /* ZXMediaPlayerView.m */,
+			);
+			path = PlayerView;
+			sourceTree = "<group>";
+		};
+		DC7EED6420A2D4D8002F4622 /* PlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				DC452FF6206CD6DA00A83680 /* ZXPushPlayerView.h */,
+				DC452FF7206CD6DA00A83680 /* ZXPushPlayerView.m */,
+			);
+			path = PlayerView;
 			sourceTree = "<group>";
 		};
 		DC863C9C2064D0CA00170E27 = {
@@ -424,8 +441,7 @@
 		DC863CEE2064D48B00170E27 /* ZXLivePlayer */ = {
 			isa = PBXGroup;
 			children = (
-				DC863D0F2064D48B00170E27 /* ZXMediaPlayerView.h */,
-				DC863D102064D48B00170E27 /* ZXMediaPlayerView.m */,
+				DC7EED6320A2D4BB002F4622 /* PlayerView */,
 				DC863CEF2064D48B00170E27 /* ControlView */,
 				DC863D0E2064D48B00170E27 /* ZXMediaPlayer.bundle */,
 				DC863D112064D48B00170E27 /* Model */,
@@ -954,8 +970,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XVV8977X8U;
+				DEVELOPMENT_TEAM = 3X7Q2W5F8J;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZXLivePlayer/Common/ThirdFrameworks",
@@ -963,8 +980,10 @@
 				INFOPLIST_FILE = "$(SRCROOT)/ZXLivePlayer/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.beijing2022.WinterOlympics;
+				PRODUCT_BUNDLE_IDENTIFIER = zhaoxin.zhaoxin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -975,8 +994,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XVV8977X8U;
+				DEVELOPMENT_TEAM = 3X7Q2W5F8J;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZXLivePlayer/Common/ThirdFrameworks",
@@ -984,8 +1004,10 @@
 				INFOPLIST_FILE = "$(SRCROOT)/ZXLivePlayer/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.beijing2022.WinterOlympics;
+				PRODUCT_BUNDLE_IDENTIFIER = zhaoxin.zhaoxin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
