@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CEE063E81ECF53A470BB1D70 /* libPods-ZXLivePlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F45DDD9A5932CDCA95AB127 /* libPods-ZXLivePlayer.a */; };
+		DC35FC9420AAB19D00CE8FC7 /* CTVSafeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DC35FC9320AAB19C00CE8FC7 /* CTVSafeTool.m */; };
 		DC36659220688594007C0B69 /* ZXListBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC36659120688594007C0B69 /* ZXListBaseViewController.m */; };
 		DC452FF8206CD6DA00A83680 /* ZXPushPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC452FF7206CD6DA00A83680 /* ZXPushPlayerView.m */; };
 		DC452FFC206CD76B00A83680 /* ZXPushControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC452FFB206CD76B00A83680 /* ZXPushControlView.m */; };
@@ -19,7 +20,6 @@
 		DC747E87206E0A3900C3BA3D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC747E86206E0A3900C3BA3D /* CoreMedia.framework */; };
 		DC747E89206E0A4F00C3BA3D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC747E88206E0A4F00C3BA3D /* Security.framework */; };
 		DC747E8B206E0A6D00C3BA3D /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC747E8A206E0A6C00C3BA3D /* Metal.framework */; };
-		DC863CAA2064D0CA00170E27 /* ZXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863CA92064D0CA00170E27 /* ZXAppDelegate.m */; };
 		DC863CB22064D0CA00170E27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC863CB12064D0CA00170E27 /* Assets.xcassets */; };
 		DC863CB82064D0CA00170E27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863CB72064D0CA00170E27 /* main.m */; };
 		DC863CC22064D0CB00170E27 /* ZXLivePlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863CC12064D0CB00170E27 /* ZXLivePlayerTests.m */; };
@@ -60,6 +60,7 @@
 		DC863D5C2064F3B600170E27 /* ZXNetWorkMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = DC863D5B2064F3B600170E27 /* ZXNetWorkMonitor.m */; };
 		DCB675EE208433F500000120 /* ZXBeautySettingPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB675ED208433F500000120 /* ZXBeautySettingPanel.m */; };
 		DCB675F12084349100000120 /* TextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB675F02084349100000120 /* TextCell.m */; };
+		DCE0071220AC11630050E0C4 /* ZXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE0071120AC11630050E0C4 /* ZXAppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		16AA995E71928A3D19E49EE4 /* Pods-ZXLivePlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZXLivePlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZXLivePlayer/Pods-ZXLivePlayer.release.xcconfig"; sourceTree = "<group>"; };
 		5F45DDD9A5932CDCA95AB127 /* libPods-ZXLivePlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZXLivePlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		676C0CA43DE884353E751AA6 /* Pods-ZXLivePlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZXLivePlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZXLivePlayer/Pods-ZXLivePlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		DC35FC9220AAB19C00CE8FC7 /* CTVSafeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTVSafeTool.h; sourceTree = "<group>"; };
+		DC35FC9320AAB19C00CE8FC7 /* CTVSafeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTVSafeTool.m; sourceTree = "<group>"; };
 		DC36659020688594007C0B69 /* ZXListBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXListBaseViewController.h; sourceTree = "<group>"; };
 		DC36659120688594007C0B69 /* ZXListBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXListBaseViewController.m; sourceTree = "<group>"; };
 		DC452FF6206CD6DA00A83680 /* ZXPushPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXPushPlayerView.h; sourceTree = "<group>"; };
@@ -101,7 +104,6 @@
 		DC747E8A206E0A6C00C3BA3D /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		DC863CA52064D0CA00170E27 /* ZXLivePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZXLivePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC863CA82064D0CA00170E27 /* ZXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXAppDelegate.h; sourceTree = "<group>"; };
-		DC863CA92064D0CA00170E27 /* ZXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXAppDelegate.m; sourceTree = "<group>"; };
 		DC863CB12064D0CA00170E27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC863CB62064D0CA00170E27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC863CB72064D0CA00170E27 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 		DCB675EF2084349100000120 /* TextCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextCell.h; sourceTree = "<group>"; };
 		DCB675F02084349100000120 /* TextCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextCell.m; sourceTree = "<group>"; };
 		DCB675F22084382F00000120 /* PituMotionAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PituMotionAddress.h; sourceTree = "<group>"; };
+		DCE0071120AC11630050E0C4 /* ZXAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXAppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +248,15 @@
 				5F45DDD9A5932CDCA95AB127 /* libPods-ZXLivePlayer.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC35FC9120AAB19C00CE8FC7 /* Safe */ = {
+			isa = PBXGroup;
+			children = (
+				DC35FC9220AAB19C00CE8FC7 /* CTVSafeTool.h */,
+				DC35FC9320AAB19C00CE8FC7 /* CTVSafeTool.m */,
+			);
+			path = Safe;
 			sourceTree = "<group>";
 		};
 		DC36658F20688573007C0B69 /* Base */ = {
@@ -379,8 +391,8 @@
 		DC863CDA2064D12400170E27 /* ZXAppDelegate */ = {
 			isa = PBXGroup;
 			children = (
+				DCE0071120AC11630050E0C4 /* ZXAppDelegate.m */,
 				DC863CA82064D0CA00170E27 /* ZXAppDelegate.h */,
-				DC863CA92064D0CA00170E27 /* ZXAppDelegate.m */,
 			);
 			path = ZXAppDelegate;
 			sourceTree = "<group>";
@@ -398,6 +410,7 @@
 		DC863CDD2064D1E600170E27 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				DC35FC9120AAB19C00CE8FC7 /* Safe */,
 				DC863D592064F39500170E27 /* NetWork */,
 				DC863D342064D66000170E27 /* UIBarButtonItem+item */,
 				DC452FFD206CD7AE00A83680 /* Player */,
@@ -788,6 +801,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC452FFC206CD76B00A83680 /* ZXPushControlView.m in Sources */,
+				DCE0071220AC11630050E0C4 /* ZXAppDelegate.m in Sources */,
 				DC863CE72064D1E600170E27 /* ZXNavigationController.m in Sources */,
 				DC863D152064D48B00170E27 /* ASValueTrackingSlider.m in Sources */,
 				DCB675EE208433F500000120 /* ZXBeautySettingPanel.m in Sources */,
@@ -808,11 +822,11 @@
 				DC863D522064E03B00170E27 /* ZXDetailViewController.m in Sources */,
 				DC863D552064EB7A00170E27 /* ZXDetailCoverView.m in Sources */,
 				DC863D142064D48B00170E27 /* ASValuePopUpView.m in Sources */,
+				DC35FC9420AAB19D00CE8FC7 /* CTVSafeTool.m in Sources */,
 				DC863D1F2064D48B00170E27 /* MMMaterialDesignSpinner.m in Sources */,
 				DC863D3B2064D85B00170E27 /* NSString+Category.m in Sources */,
 				DC863D382064D66000170E27 /* UIBarButtonItem+item.m in Sources */,
 				DC863D1A2064D48B00170E27 /* ZXMediaPlayerLoadingView.m in Sources */,
-				DC863CAA2064D0CA00170E27 /* ZXAppDelegate.m in Sources */,
 				DC863CE62064D1E600170E27 /* ZXBaseViewController.m in Sources */,
 				DC863D162064D48B00170E27 /* DQChangeAngleModel.m in Sources */,
 				DC863D1B2064D48B00170E27 /* UIAlertController+MediaPlayerRotation.m in Sources */,
