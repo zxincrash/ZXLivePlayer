@@ -32,6 +32,15 @@ DEPENDENCIES:
   - YYKeyboardManager
   - YYKit
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - Masonry
+    - MJRefresh
+    - SDWebImage
+    - YYKeyboardManager
+    - YYKit
+
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -42,4 +51,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 389e3092955eb41eb17c02b4378ceae13a8a9504
 
-COCOAPODS: 1.4.0.beta.2
+COCOAPODS: 1.5.2

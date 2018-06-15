@@ -391,8 +391,8 @@
 		DC863CDA2064D12400170E27 /* ZXAppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				DCE0071120AC11630050E0C4 /* ZXAppDelegate.m */,
 				DC863CA82064D0CA00170E27 /* ZXAppDelegate.h */,
+				DCE0071120AC11630050E0C4 /* ZXAppDelegate.m */,
 			);
 			path = ZXAppDelegate;
 			sourceTree = "<group>";
@@ -617,7 +617,6 @@
 				DC863CA12064D0CA00170E27 /* Sources */,
 				DC863CA22064D0CA00170E27 /* Frameworks */,
 				DC863CA32064D0CA00170E27 /* Resources */,
-				AD1F74B2D618A6EBD3A43151 /* [CP] Embed Pods Frameworks */,
 				F2528CB01D539489B4B4E23A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -760,21 +759,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AD1F74B2D618A6EBD3A43151 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZXLivePlayer/Pods-ZXLivePlayer-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F2528CB01D539489B4B4E23A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -786,7 +770,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
